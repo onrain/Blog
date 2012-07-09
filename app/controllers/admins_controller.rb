@@ -2,7 +2,9 @@ class AdminsController < ApplicationController
   # GET /admins
   # GET /admins.json
   def index
-    @admins = Admin.all
+
+    @admins_p = Admin.where("published = 1")
+    @admins_no_p = Admin.where("published = 0")
 
     respond_to do |format|
       format.html # index.html.erb

@@ -8,7 +8,7 @@
   = @admin.published
 %p
   %b Data create:
-  = @admin.data_create
+  = set_time @admin.data_create
 %p
   %b Image
   =image_tag @admin.image.url(:medium)
