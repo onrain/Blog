@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @admin.title
+%p
+  %b Published:
+  = @admin.published
+%p
+  %b Data create:
+  = @admin.data_create
+%p
+  %b Image
+  =image_tag @admin.image.url(:medium)
+%p
+  %b Article description:
+  = @admin.article_description
+%p
+  %b Article content:
+  = @admin.article_content
+  
+= link_to 'Edit', edit_admin_path(@admin)
+\|
+= link_to 'Back', admins_path
