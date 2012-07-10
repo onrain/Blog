@@ -11,13 +11,13 @@
   = set_time @admin.data_create
 %p
   %b Image
-  =image_tag @admin.image.url(:medium)
+  = image_tag @admin.image.url(:medium)
 %p
   %b Article description:
-  = @admin.article_description
+  = raw @admin.article_description
 %p
   %b Article content:
-  = @admin.article_content
+  = raw @admin.article_content
   
 = link_to 'Edit', edit_admin_path(@admin)
 \|

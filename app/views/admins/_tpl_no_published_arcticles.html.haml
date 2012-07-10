@@ -17,8 +17,8 @@
       %td= admin.title
       %td= admin.published
       %td= set_time admin.data_create
-      %td= admin.article_description
-      %td= admin.article_content
+      %td= raw admin.article_description
+      %td= raw admin.article_content
       %td= link_to 'Show', admin
       %td= link_to 'Edit', edit_admin_path(admin)
       %td= link_to 'Destroy', admin, :confirm => 'Are you sure?', :method => :delete

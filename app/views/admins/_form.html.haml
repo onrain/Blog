@@ -1,3 +1,7 @@
+%script{:type=>"text/javascript", :src=>"http://js.nicedit.com/nicEdit-latest.js"}
+%script{:type=>"text/javascript"}
+  bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+
 = form_for @admin do |f|
   -if @admin.errors.any?
     #error_explanation
@@ -17,10 +21,10 @@
     = f.datetime_select :data_create
   .field
     = f.label :article_description
-    = f.text_area :article_description
+    = f.text_area :article_description, :rows=>"10", :cols=>"50"
   .field
     = f.label :article_content
-    = f.text_area :article_content
+    = f.text_area :article_content, :rows=>"10", :cols=>"50"
   .field
     = f.label :image
     = f.file_field :image
