@@ -112,6 +112,7 @@ GEM
     uglifier (1.2.6)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+    will_paginate (3.0.3)
 
 PLATFORMS
   ruby
@@ -126,3 +127,4 @@ DEPENDENCIES
   rmagick
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
+  will_paginate (~> 3.0)

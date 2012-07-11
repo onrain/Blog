@@ -3,8 +3,9 @@ class AdminsController < ApplicationController
   # GET /admins.json
   def index
 
-    @admins_p = Admin.where(:published => 1)
-    @admins_no_p = Admin.where(:published => 0)
+    @admins_p = Admin.where(:published => 1).paginate page: params[:page], order: 'published desc', per_page: 10
+    @admins_no_p = Admin.where(:published => 0).paginate page: params[:page], order: 'published desc', per_page: 10
+    @comment = Comment.paginate page: params[:page], order: 'data_p desc', per_page: 10
 
     respond_to do |format|
       format.html # index.html.erb
