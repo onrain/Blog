@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
     @articles = Admin.find(params[:id])
     
     #@comments_q = Comment.where("post_id = #{params[:id]}")
-    @comments_q = Comment.find_all_by_post_id(params[:id]).paginate page: params[:page], order: 'data_p desc', per_page: 5
+    @comments_q = Comment.find_all_by_post_id(params[:id], :order => "data_p desc").paginate page: params[:page], order: 'data_p desc', per_page: 5
     @comment = Comment.new
 
     respond_to do |format|
