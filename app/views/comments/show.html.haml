@@ -16,9 +16,12 @@
 
 
 
-  
-=render 'form'
-
+- unless session[:user_id].nil?
+  =render 'form'
+- else
+  %h3
+    Please,
+    = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
 %hr
 
 - @comments_q.each do |comment|
@@ -32,6 +35,7 @@
     = set_time comment.data_p
   %p
     = comment.comment_content
-  
+
+= will_paginate @comments_q
   
 = link_to "Back", home_path
