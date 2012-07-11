@@ -6,5 +6,12 @@
   = javascript_include_tag "application"
   = csrf_meta_tags
 %body
-
+  #login_panel
+  - if current_user
+    Signed in as
+    %strong
+    = current_user.name
+    = link_to "Sign out", signout_path, id: "sign_out"
+    - else
+    = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
 = yield
