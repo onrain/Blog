@@ -3,8 +3,8 @@ class AdminsController < ApplicationController
   # GET /admins.json
   def index
 
-    @admins_p = Admin.where("published = 1")
-    @admins_no_p = Admin.where("published = 0")
+    @admins_p = Admin.where(:published => 1)
+    @admins_no_p = Admin.where(:published => 0)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -42,8 +42,7 @@ class AdminsController < ApplicationController
   # POST /admins.json
   def create
     @admin = Admin.new(params[:admin])
-    @admin.data_create = Time.now
-
+    
     respond_to do |format|
       if @admin.save
         format.html { redirect_to @admin, notice: 'Admin was successfully created.' }

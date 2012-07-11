@@ -1,0 +1,35 @@
+%p
+  %b Title:
+  = @articles.title
+%p
+  %b Data create:
+  = set_time @articles.data_create
+%p
+  %b Image
+  = image_tag @articles.image.url(:medium)
+%p
+  %b Article description:
+  = raw @articles.article_description
+%p
+  %b Article content:
+  = raw @articles.article_content
+
+
+
+  
+=render 'form'
+
+%hr
+
+- @comments_q.each do |comment|
+  %p
+    %b Username
+    = comment.username
+  %p
+    %b Email
+    = comment.email
+  %p
+    = set_time comment.data_p
+  %p
+    = comment.comment_content
+  

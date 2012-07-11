@@ -1,8 +1,8 @@
 OrangeBlog::Application.routes.draw do
-  root :to => 'home#index'
-  
-  match "/article/:id", :to=> "home#show"
-  match "/home", :to=>"home#index"
+  resources :comments
+
+  root :to => 'admins#index'
+
   resources :admins
 
   # The priority is based upon order of creation:
@@ -54,7 +54,7 @@ OrangeBlog::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-   root :to => 'home#index'
+  #root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
