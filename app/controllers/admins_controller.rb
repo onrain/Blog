@@ -1,4 +1,5 @@
 class AdminsController < ApplicationController
+  before_filter :authorize
   # GET /admins
   # GET /admins.json
   def index
@@ -80,6 +81,13 @@ class AdminsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to admins_url }
       format.json { head :no_content }
+    end
+  end
+  
+protected
+  def authorize
+    unless AdminLogin.find_by_id(session[:login_user])
+      redirect_to login_url, :alert=>"Please login"
     end
   end
 end

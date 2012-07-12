@@ -1,0 +1,12 @@
+- if flash[:alert]
+  %p#notice
+    =flash[:alert]
+
+#login
+  = form_tag do
+    %p
+      = text_field_tag "login"
+    %p
+      = text_field_tag "password"
+    %p
+      = submit_tag "Login"

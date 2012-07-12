@@ -1,10 +1,8 @@
 class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
-  def index
-    @comments = Comment.paginate page: params[:page], order: 'data_p desc', per_page: 10
-    
-    @articles = Admin.where(:published => 1)
+  def index    
+    @articles = Admin.where(:published => 1).paginate page: params[:page], order: 'data_create desc', per_page: 10
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,11 +13,8 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
-    #@comment = Comment.find(params[:id])
-    
+   
     @articles = Admin.find(params[:id])
-    
-    #@comments_q = Comment.where("post_id = #{params[:id]}")
     @comments_q = Comment.find_all_by_post_id(params[:id], :order => "data_p desc").paginate page: params[:page], order: 'data_p desc', per_page: 5
     @comment = Comment.new
 

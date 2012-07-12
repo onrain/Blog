@@ -3,6 +3,13 @@ OrangeBlog::Application.routes.draw do
 
 
 
+  controller :session_admin do
+    get "login" => :new
+    post "login" => :create
+    get "logout" => :destroy
+  end
+  
+
   match 'auth/:provider/callback', to: 'sessions#create'
   
   match 'auth/failure', to: redirect('/')

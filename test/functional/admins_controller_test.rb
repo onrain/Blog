@@ -3,6 +3,13 @@ require 'test_helper'
 class AdminsControllerTest < ActionController::TestCase
   setup do
     @admin = admins(:one)
+    @update = {
+    article_content:'Test content',
+    article_description: 'Test description',
+    data_create:Time.now,
+    published:'1',
+    title:'Test title'
+    }
   end
 
   test "should get index" do
@@ -18,10 +25,10 @@ class AdminsControllerTest < ActionController::TestCase
 
   test "should create admin" do
     assert_difference('Admin.count') do
-      post :create, admin: { article_content: @admin.article_content, article_description: @admin.article_description, data_create: @admin.data_create, published: @admin.published, title: @admin.title }
+      post :create, admin: @update
     end
 
-    assert_redirected_to admin_path(assigns(:admin))
+    assert_redirected_to admins_path(assigns(:admin))
   end
 
   test "should show admin" do
@@ -35,8 +42,8 @@ class AdminsControllerTest < ActionController::TestCase
   end
 
   test "should update admin" do
-    put :update, id: @admin, admin: { article_content: @admin.article_content, article_description: @admin.article_description, data_create: @admin.data_create, published: @admin.published, title: @admin.title }
-    assert_redirected_to admin_path(assigns(:admin))
+    put :update, id: @admin, admin: @update
+    assert_redirected_to admins_path(assigns(:admin))
   end
 
   test "should destroy admin" do
