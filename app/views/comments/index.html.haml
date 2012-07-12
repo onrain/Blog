@@ -1,16 +1,19 @@
--if notice
-  #notice
-    =notice
-%table
-- @articles.each do |art|
-  %tr
-    %td= image_tag art.image.url(:small)
-    %td= art.title
-    %td= art.published
-    %td= set_time art.data_create
-    %td= raw art.article_description
-    %td= raw art.article_content
-    %td= link_to 'Show', article_path(art)
+.articles
+  -if notice
+    #notice
+      =notice
+      
+  - @articles.each do |art|
+    #art_div
+      = image_tag art.image.url(:medium)
+      #art_f
+        %h3
+          = link_to art.title, article_path(art)
+        Published:
+        = set_time art.data_create
+        #description
+          = raw art.article_description
+      = link_to 'Show', article_path(art)
 
 %br
 

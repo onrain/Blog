@@ -1,32 +1,42 @@
-%script{:type=>"text/javascript", :src=>"http://js.nicedit.com/nicEdit-latest.js"}
+%script{:type => "text/javascript", :src=>"http://js.nicedit.com/nicEdit-latest.js"}
 %script{:type=>"text/javascript"}
   bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  
+- if notice
+  #notice
+    =notice
 
-= form_for @admin do |f|
+= form_for @admin, :html => { :class => 'form-horizontal' } do |f|
   -if @admin.errors.any?
     #error_explanation
       %h2= "#{pluralize(@admin.errors.count, "error")} prohibited this admin from being saved:"
       %ul
         - @admin.errors.full_messages.each do |msg|
           %li= msg
-
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :published
-    = f.check_box :published
-  .field
-    = f.label :data_create
-    = f.datetime_select :data_create
-  .field
-    = f.label :article_description
-    = f.text_area :article_description, :rows=>"10", :cols=>"50"
-  .field
-    = f.label :article_content
-    = f.text_area :article_content, :rows=>"10", :cols=>"50"
-  .field
-    = f.label :image
-    = f.file_field :image
-  .actions
-    = f.submit 'Save'
+          
+  .control-group
+    = f.label :title, :class => 'control-label'
+    .controls
+      = f.text_field :title, :class => 'text_field'
+  .control-group
+    = f.label :published, :class => 'control-label'
+    .controls
+      = f.check_box :published, :class => 'number_field'
+  .control-group
+    = f.label :data_create, :class => 'control-label'
+    .controls
+      = f.datetime_select :data_create, :class => 'datetime_select'
+  .control-group
+    = f.label :article_description, :class => 'control-label'
+    .controls
+      = f.text_area :article_description, id:"textarea_form", :class => 'text_area', rows:10
+  .control-group
+    = f.label :article_content, :class => 'control-label'
+    .controls
+      = f.text_area :article_content, id:"textarea_form", :class => 'text_area', rows:10
+  .control-group
+    .controls
+      =f.file_field :image
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), admins_path, :class => 'btn'

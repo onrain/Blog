@@ -1,3 +1,9 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.articles{ display: block; margin-top: 18px; }
+#art_div{ margin-left: 50px; display: block; padding-top: 20px;  }
+#art_div #art_f { position: relative; left: 220px; top:-230px; }
+#art_div #art_f #description{ width: 400px; border-right: 1px solid black; }

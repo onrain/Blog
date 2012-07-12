@@ -1,5 +1,7 @@
 class AdminsController < ApplicationController
   before_filter :authorize
+  
+
   # GET /admins
   # GET /admins.json
   def index

@@ -16,12 +16,7 @@ pre {
   font-size: 11px; }
 
 a {
-  color: #000;
-  &:visited {
-    color: #666; }
-  &:hover {
-    color: #fff;
-    background-color: #000; } }
+  color: #000;}
 
 div {
   &.field, &.actions {
@@ -29,19 +24,18 @@ div {
 
 #notice {
   color: green; }
-
+/* 51.153.255*/
 .field_with_errors {
   padding: 2px;
   background-color: red;
-  display: table; }
+  display: inline-block; }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid #00FF00;
   padding: 7px;
   padding-bottom: 0;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background: rgba(255,153,0,0.3);
   h2 {
     text-align: left;
     font-weight: bold;
@@ -49,8 +43,7 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
-    color: #fff; }
+    color: #000; }
   ul li {
     font-size: 12px;
-    list-style: square; } }
+    list-style: none; } }

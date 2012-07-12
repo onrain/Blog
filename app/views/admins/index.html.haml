@@ -1,19 +1,73 @@
-%p
-  = link_to "Logout", logout_path
+- model_class = Admin
+.page-header
+  %h3#admin_label
+    Admin Panel
+    =link_to "[exit]", logout_path
+%h1 No Published articles
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:image)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:published)
+      %th= model_class.human_attribute_name(:data_create)
+      %th= model_class.human_attribute_name(:article_description)
+      %th= model_class.human_attribute_name(:article_content)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @admins_no_p.each do |admin|
+      %tr
+        %td= link_to admin.id, admin_path(admin)
+        %td= image_tag admin.image(:small)
+        %td= admin.title
+        %td= admin.published
+        %td= set_time admin.data_create
+        %td= admin.article_description.html_safe
+        %td= admin.article_content.html_safe
+        %td
+          = link_to t('.show', :default => t("helpers.links.show")), admin_path(admin), :class => 'btn btn-mini'
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(admin), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_path(admin), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
 %br
 %br
-= link_to 'New Admin', new_admin_path
+= will_paginate @admins_no_p
+
 %br
-= render 'tpl_no_published_arcticles'
 %br
-= render 'tpl_published_articles'
-%br
-%hr
-%br
+%h1 Published articles
+%table.table.table-striped
+  %thead
+    %tr
+      %th= model_class.human_attribute_name(:id)
+      %th= model_class.human_attribute_name(:image)
+      %th= model_class.human_attribute_name(:title)
+      %th= model_class.human_attribute_name(:published)
+      %th= model_class.human_attribute_name(:data_create)
+      %th= model_class.human_attribute_name(:article_description)
+      %th= model_class.human_attribute_name(:article_content)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @admins_p.each do |admin|
+      %tr
+        %td= link_to admin.id, admin_path(admin)
+        %td= image_tag admin.image(:small)
+        %td= admin.title
+        %td= admin.published
+        %td= set_time admin.data_create
+        %td= admin.article_description.html_safe
+        %td= admin.article_content.html_safe
+        %td
+          = link_to t('.show', :default => t("helpers.links.show")), admin_path(admin), :class => 'btn btn-mini'
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(admin), :class => 'btn btn-mini'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_path(admin), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+
+= will_paginate @admins_p
+
 %h1 Comments
 - @comment.each do |c|
   %p
-    = c.username  
+    = c.username
     = c.email
     %br
     = truncate(c.comment_content, length:10)
@@ -21,3 +75,6 @@
   %hr
 %p
   = will_paginate @comment
+
+
+= link_to t('.new', :default => t("helpers.links.new")), new_admin_path, :class => 'btn btn-primary', :id=>"new_btn"
