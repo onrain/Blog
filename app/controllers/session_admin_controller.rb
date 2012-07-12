@@ -11,12 +11,12 @@ class SessionAdminController < ApplicationController
 
   def destroy
     session[:login_user] = nil
-    redirect_to comments_path, :notice=>"Logout admin success."
+    redirect_to home_path, :notice=>"Logout admin success."
   end
   
   def new
     unless session[:login_user].nil?
-      redirect_to comments_path
+      redirect_to home_path
     end
   end
 end
