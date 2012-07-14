@@ -4,7 +4,7 @@
     %p
       = @articles.title
     %p
-      = image_tag @articles.image.url(:medium), id:"show_img" if @articles.image?
+      = image_tag @articles.image.url(:medium), id:"show_img", class:"thumbnail" if @articles.image?
     %p
       = raw @articles.article_content
     %p
@@ -23,11 +23,11 @@
     %hr
     #comment_box
       - @comments_q.each do |comment|
-        %p#c_user
-          Username
+        %p
+          %b Username
           = comment.username
-        %p#c_email
-          Email
+        %p
+          %b Email
           = comment.email
         %p
           = set_time comment.data_p

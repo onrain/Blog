@@ -1,21 +1,22 @@
 -if notice
-  #notice=notice
+  %div{class:"alert alert-error"}
+    %button{:class=>"close", :"data-dismiss"=>:"alert"}
+      ×
+    =notice
   
 = form_for @comment do |f|
-
-  .field
-    %h3
-      = current_user.name
-    = f.hidden_field :username, :value=>current_user.name
-  .field
-    %h3
+  .well
+    = hello_lepra(current_user.name)
+    %h4
+    #curent_email
+      -
       = current_user.email
-    = f.hidden_field :email, :value=>current_user.email
-
-    = f.hidden_field :post_id, :value=>params[:id]
     
-    = f.hidden_field :admin_id, :value=>params[:id]
-
+  = f.hidden_field :username, :value=>current_user.name 
+  = f.hidden_field :email, :value=>current_user.email
+  = f.hidden_field :post_id, :value=>params[:id]
+  = f.hidden_field :admin_id, :value=>params[:id]
+  
   .field
     = f.text_area :comment_content, id:"comment_area"
   .actions
