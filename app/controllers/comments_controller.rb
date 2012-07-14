@@ -29,7 +29,8 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
-    @comment.data_p = Time.now
+    Time.zone = "Kyiv"
+    @comment.data_p = Time.zone.now
     respond_to do |format|
       if @comment.save
         format.html { redirect_to request.env['HTTP_REFERER'], notice: 'Comment was successfully created.' }

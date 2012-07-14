@@ -13,9 +13,10 @@
     = f.hidden_field :email, :value=>current_user.email
 
     = f.hidden_field :post_id, :value=>params[:id]
+    
+    = f.hidden_field :admin_id, :value=>params[:id]
 
   .field
-    = f.label :comment_content
-    = f.text_area :comment_content
+    = f.text_area :comment_content, id:"comment_area"
   .actions
-    = f.submit 'Save'
+    = f.submit 'Save', class:"btn btn-primary"

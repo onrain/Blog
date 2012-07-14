@@ -25,12 +25,19 @@ div {
 #notice {
   color: green; }
 /* 51.153.255*/
-.field_with_errors {
-  padding: 2px;
-  background-color: red;
-  display: inline-block; }
-
+.field_with_errors:before {
+  color:red;
+  content: "*";
+  }
+.field_with_errors input {
+    -moz-box-shadow: 0 0 6px rgba(204,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 6px rgba(204,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 6px rgba(204,0,0,0.5); /* Параметры тени */
+    padding: 6px;
+}
 #error_explanation {
+  position: relative;
+  margin: 0 auto;
   width: 450px;
   border: 2px solid #00FF00;
   padding: 7px;

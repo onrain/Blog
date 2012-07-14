@@ -1,41 +1,36 @@
-%p
-  %b Title:
-  = @articles.title
-%p
-  %b Data create:
-  = set_time @articles.data_create
-%p
-  %b Image
-  = image_tag @articles.image.url(:medium)
-%p
-  %b Article description:
-  = raw @articles.article_description
-%p
-  %b Article content:
-  = raw @articles.article_content
-
-
-
-- unless session[:user_id].nil?
-  =render 'form'
-- else
-  %h3
-    Please,
-    = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
-%hr
-
-- @comments_q.each do |comment|
+.article_show
+  = link_to "Back", home_path, id:"back_url"
   %p
-    %b Username
-    = comment.username
+    = @articles.title
   %p
-    %b Email
-    = comment.email
+    = image_tag @articles.image.url(:medium), id:"show_img" if @articles.image?
   %p
-    = set_time comment.data_p
+    = raw @articles.article_content
   %p
-    = comment.comment_content
+    Data create:
+    = set_time @articles.data_create
+  %hr
 
-= will_paginate @comments_q
-  
-= link_to "Back", home_path
+  #comments_d
+    - unless session[:user_id].nil?
+      =render 'form'
+    - else
+      %h3
+        Please login:
+        = link_to image_tag("facebook_logo2.png", width:"50", height:"50"), "/auth/facebook", id: "sign_in_art"
+    %hr
+    #comment_box
+      - @comments_q.each do |comment|
+        %p
+          %b Username
+          = comment.username
+        %p
+          %b Email
+          = comment.email
+        %p
+          = set_time comment.data_p
+        %p
+          = comment.comment_content
+        %hr
+
+  = will_paginate @comments_q
