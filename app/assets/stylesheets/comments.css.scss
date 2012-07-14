@@ -1,9 +1,9 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#article { clear: both; height: auto; position: relative; padding-left: 40px; top:20px; left:70px; border-left: 1px dashed gray; padding-top: 10px; width:800px; }
+img.image_b{ float:left; }
+img.image_b > #article{margin: 0px 10px 0px 10px; }
+#more{ color:#3399CC; float:right; margin-right: 50px;}
 
 
-.articles{ display: block; margin-top: 18px; }
-#art_div{ margin-left: 50px; display: block; padding-top: 20px;  }
-#art_div #art_f { position: relative; left: 220px; top:-230px; }
-#art_div #art_f #description{ width: 400px; border-right: 1px solid black; }

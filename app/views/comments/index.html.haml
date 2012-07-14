@@ -1,19 +1,16 @@
 .articles
-  -if notice
-    #notice
-      =notice
-      
   - @articles.each do |art|
-    #art_div
-      = image_tag art.image.url(:medium)
-      #art_f
-        %h3
-          = link_to art.title, article_path(art)
+    #article
+      = image_tag art.image.url(:medium), :class=>"image_b" if art.image?
+      #art_c
+        = link_to art.title, article_path(art)
+        = art.article_description.html_safe
+        %br
         Published:
         = set_time art.data_create
-        #description
-          = raw art.article_description
-      = link_to 'Show', article_path(art)
+      %p
+        = link_to 'Read more...', article_path(art), id:"more"
+      %hr
 
 %br
 
