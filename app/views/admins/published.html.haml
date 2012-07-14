@@ -1,0 +1,32 @@
+= render 'nav'
+.pub_art
+  - if notice
+    #notice=notice
+  %h1 Published articles
+  %table.table.table-striped
+    %thead
+      %tr
+        %th id
+        %th image
+        %th title
+        %th published
+        %th created
+        %th article description
+        %th article content
+        %th=t '.actions', :default => t("helpers.actions")
+    %tbody
+      - @admins_p.each do |admin|
+        %tr
+          %td= link_to admin.id, admin_path(admin)
+          %td= image_tag admin.image(:small) if admin.image?
+          %td= admin.title
+          %td= admin.published
+          %td= set_time admin.data_create
+          %td= truncate(admin.article_description.html_safe, :length => 123, :omission =>"...")
+          %td= truncate(admin.article_content.html_safe, :length => 123, :omission =>"...")
+          %td
+            = link_to t('.show', :default => t("helpers.links.show")), admin_path(admin), :class => 'btn btn-mini'
+            = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(admin), :class => 'btn btn-mini'
+            = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_path(admin), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+
+  = will_paginate @admins_p

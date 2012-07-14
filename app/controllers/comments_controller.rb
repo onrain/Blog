@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to admins_url }
+      format.html { redirect_to admins_comments_url }
       format.json { head :no_content }
     end
   end

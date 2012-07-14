@@ -1,0 +1,13 @@
+=render 'nav'
+.admin_comment
+  %h1 Comments
+  - @comment.each do |c|
+    %p
+      = c.username
+      = c.email
+      %br
+      = truncate(c.comment_content, length:10)
+      = link_to '[x]', c, :confirm => 'Are you sure?', :method => :delete
+    %hr
+  %p
+    = will_paginate @comment

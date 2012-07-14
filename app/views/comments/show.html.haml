@@ -1,15 +1,17 @@
 .article_show
   = link_to "Back", home_path, id:"back_url"
-  %p
-    = @articles.title
-  %p
-    = image_tag @articles.image.url(:medium), id:"show_img" if @articles.image?
-  %p
-    = raw @articles.article_content
-  %p
-    Data create:
-    = set_time @articles.data_create
-  %hr
+  #art_div
+    %p
+      = @articles.title
+    %p
+      = image_tag @articles.image.url(:medium), id:"show_img" if @articles.image?
+    %p
+      = raw @articles.article_content
+    %p
+      Data create:
+      %i
+        = set_time @articles.data_create
+    %hr
 
   #comments_d
     - unless session[:user_id].nil?
@@ -21,11 +23,11 @@
     %hr
     #comment_box
       - @comments_q.each do |comment|
-        %p
-          %b Username
+        %p#c_user
+          Username
           = comment.username
-        %p
-          %b Email
+        %p#c_email
+          Email
           = comment.email
         %p
           = set_time comment.data_p
