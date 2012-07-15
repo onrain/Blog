@@ -1,10 +1,5 @@
 = render 'nav'
 .pub_art
-  -if notice
-  %div{class:"alert alert-error"}
-    %button{:class=>"close", :"data-dismiss"=>:"alert"}
-      ×
-    =notice
   %h1 Published articles
   %table.table.table-striped
     %thead

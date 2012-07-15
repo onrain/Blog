@@ -1,12 +1,14 @@
-- if flash[:alert]
-  %p#notice
-    =flash[:alert]
+.alert_mess
+  -if flash[:alert]
+    %div{class:"alert alert-error"}
+      %button{:class=>"close", :"data-dismiss"=>:"alert", :value=>"x"}
+      = flash[:alert]
 
-#login
+.login
   = form_tag do
     %p
       = text_field_tag "login"
     %p
-      = text_field_tag "password"
+      = password_field_tag "password"
     %p
-      = submit_tag "Login"
+      = submit_tag "Login", class:"btn btn-primary btn-large"

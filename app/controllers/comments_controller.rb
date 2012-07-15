@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
-  # GET /comments
-  # GET /comments.json
+  
+  caches_page :index, :show, :gzip => :best_speed
+  
   def index    
     @articles = Admin.where(:published => 1).paginate page: params[:page], order: 'data_create desc', per_page: 10
 
@@ -10,8 +11,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # GET /comments/1
-  # GET /comments/1.json
+
   def show
    
     @articles = Admin.find(params[:id])
@@ -25,8 +25,6 @@ class CommentsController < ApplicationController
   end
 
 
-  # POST /comments
-  # POST /comments.json
   def create
     @comment = Comment.new(params[:comment])
     Time.zone = "Kyiv"
@@ -42,8 +40,7 @@ class CommentsController < ApplicationController
     end
   end
 
-  # DELETE /comments/1
-  # DELETE /comments/1.json
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy

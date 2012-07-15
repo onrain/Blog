@@ -1,9 +1,6 @@
 class AdminsController < ApplicationController
   before_filter :authorize
   
-
-  # GET /admins
-  # GET /admins.json
   def index
     respond_to do |format|
       format.html # index.html.erb
@@ -11,12 +8,6 @@ class AdminsController < ApplicationController
     end
   end
   
-  def published
-    @admins_p = Admin.where(:published => 1).paginate page: params[:page], order: 'published desc', per_page: 10
-  end
-
-  # GET /admins/1
-  # GET /admins/1.json
   def show
     @admin = Admin.find(params[:id])
     respond_to do |format|
@@ -29,11 +20,15 @@ class AdminsController < ApplicationController
     @comment = Comment.paginate page: params[:page], order: 'data_p desc', per_page: 10
   end
   
+  def published
+    @admins_p = Admin.where(:published => 1).paginate page: params[:page], order: 'published desc', per_page: 10
+  end
+
+  
   def npublished
     @admins_no_p = Admin.where(:published => 0).paginate page: params[:page], order: 'published desc', per_page: 10
   end
-  # GET /admins/new
-  # GET /admins/new.json
+
   def new
     @admin = Admin.new
 
@@ -53,6 +48,8 @@ class AdminsController < ApplicationController
   def create
     @admin = Admin.new(params[:admin])
     
+    expire_page :action => :index, :action=> :show, :controller=>:comments
+    
     respond_to do |format|
       if @admin.save
         format.html { redirect_to @admin, notice: 'Admin was successfully created.' }
@@ -64,8 +61,7 @@ class AdminsController < ApplicationController
     end
   end
 
-  # PUT /admins/1
-  # PUT /admins/1.json
+
   def update
     @admin = Admin.find(params[:id])
 
@@ -80,8 +76,7 @@ class AdminsController < ApplicationController
     end
   end
 
-  # DELETE /admins/1
-  # DELETE /admins/1.json
+
   def destroy
     @admin = Admin.find(params[:id])
     @admin.destroy
