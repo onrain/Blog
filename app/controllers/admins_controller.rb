@@ -4,7 +4,12 @@ class AdminsController < ApplicationController
   respond_to :html, :json, :xml
   
   def index
-  
+    if params[:l].blank?
+      limit = 10
+    else
+      limit = params[:l]
+    end
+    @last_articles = Admin.limit(limit)
   end
   
   def show
