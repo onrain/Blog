@@ -1,241 +1,90 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails: Welcome aboard</title>
-    <style type="text/css" media="screen">
-      body {
-        margin: 0;
-        margin-bottom: 25px;
-        padding: 0;
-        background-color: #f0f0f0;
-        font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-        font-size: 13px;
-        color: #333;
-      }
-
-      h1 {
-        font-size: 28px;
-        color: #000;
-      }
-
-      a  {color: #03c}
-      a:hover {
-        background-color: #03c;
-        color: white;
-        text-decoration: none;
-      }
-
-
-      #page {
-        background-color: #f0f0f0;
-        width: 750px;
-        margin: 0;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      #content {
-        float: left;
-        background-color: white;
-        border: 3px solid #aaa;
-        border-top: none;
-        padding: 25px;
-        width: 500px;
-      }
-
-      #sidebar {
-        float: right;
-        width: 175px;
-      }
-
-      #footer {
-        clear: both;
-      }
-
-      #header, #about, #getting-started {
-        padding-left: 75px;
-        padding-right: 30px;
-      }
-
-
-      #header {
-        background-image: url("assets/rails.png");
-        background-repeat: no-repeat;
-        background-position: top left;
-        height: 64px;
-      }
-      #header h1, #header h2 {margin: 0}
-      #header h2 {
-        color: #888;
-        font-weight: normal;
-        font-size: 16px;
-      }
-
-
-      #about h3 {
-        margin: 0;
-        margin-bottom: 10px;
-        font-size: 14px;
-      }
-
-      #about-content {
-        background-color: #ffd;
-        border: 1px solid #fc0;
-        margin-left: -55px;
-        margin-right: -10px;
-      }
-      #about-content table {
-        margin-top: 10px;
-        margin-bottom: 10px;
-        font-size: 11px;
-        border-collapse: collapse;
-      }
-      #about-content td {
-        padding: 10px;
-        padding-top: 3px;
-        padding-bottom: 3px;
-      }
-      #about-content td.name  {color: #555}
-      #about-content td.value {color: #000}
-
-      #about-content ul {
-        padding: 0;
-        list-style-type: none;
-      }
-
-      #about-content.failure {
-        background-color: #fcc;
-        border: 1px solid #f00;
-      }
-      #about-content.failure p {
-        margin: 0;
-        padding: 10px;
-      }
-
-
-      #getting-started {
-        border-top: 1px solid #ccc;
-        margin-top: 25px;
-        padding-top: 15px;
-      }
-      #getting-started h1 {
-        margin: 0;
-        font-size: 20px;
-      }
-      #getting-started h2 {
-        margin: 0;
-        font-size: 14px;
-        font-weight: normal;
-        color: #333;
-        margin-bottom: 25px;
-      }
-      #getting-started ol {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #getting-started li {
-        font-size: 18px;
-        color: #888;
-        margin-bottom: 25px;
-      }
-      #getting-started li h2 {
-        margin: 0;
-        font-weight: normal;
-        font-size: 18px;
-        color: #333;
-      }
-      #getting-started li p {
-        color: #555;
-        font-size: 13px;
-      }
-
-
-      #sidebar ul {
-        margin-left: 0;
-        padding-left: 0;
-      }
-      #sidebar ul h3 {
-        margin-top: 25px;
-        font-size: 16px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid #ccc;
-      }
-      #sidebar li {
-        list-style-type: none;
-      }
-      #sidebar ul.links li {
-        margin-bottom: 5px;
-      }
-
-      .filename {
-        font-style: italic;
-      }
-    </style>
-    <script type="text/javascript">
-      function about() {
-        info = document.getElementById('about-content');
-        if (window.XMLHttpRequest)
-          { xhr = new XMLHttpRequest(); }
-        else
-          { xhr = new ActiveXObject("Microsoft.XMLHTTP"); }
-        xhr.open("GET","rails/info/properties",false);
-        xhr.send("");
-        info.innerHTML = xhr.responseText;
-        info.style.display = 'block'
-      }
-    </script>
-  </head>
-  <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://www.ruby-doc.org/core/">Ruby core</a></li>
-              <li><a href="http://www.ruby-doc.org/stdlib/">Ruby standard library</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-
-      <div id="content">
-        <div id="header">
-          <h1>Welcome aboard</h1>
-          <h2>You&rsquo;re riding Ruby on Rails!</h2>
-        </div>
-
-        <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
-          <div id="about-content" style="display: none"></div>
-        </div>
-
-        <div id="getting-started">
-          <h1>Getting started</h1>
-          <h2>Here&rsquo;s how to get rolling:</h2>
-
-          <ol>
-            <li>
-              <h2>Use <code>rails generate</code> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-
-            <li>
-              <h2>Set up a default route and remove <span class="filename">public/index.html</span></h2>
-              <p>Routes are set up in <span class="filename">config/routes.rb</span>.</p>
-            </li>
-
-            <li>
-              <h2>Create your database</h2>
-              <p>Run <code>rake db:create</code> to create your database. If you're not using SQLite (the default), edit <span class="filename">config/database.yml</span> with your username and password.</p>
-            </li>
-          </ol>
-        </div>
-      </div>
-
-      <div id="footer">&nbsp;</div>
+<html></html>
+<head>
+  <title>OrangeBlog</title>
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/admins.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/comments.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-transition.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-alert.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-modal.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-tab.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-popover.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-button.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap.js?body=1" type="text/javascript"></script>
+  <script src="/assets/admins.js?body=1" type="text/javascript"></script>
+  <script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
+  <script src="/assets/comments.js?body=1" type="text/javascript"></script>
+  <script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+  <meta content="yLxzHHwEW372IrjaQDtS9HRh5D9RT7ppSGGdbBnrAxI=" name="csrf-token" />
+</head>
+<body>
+  <div id='header'>
+    <a href="/home" id="main-label">Orange Blog</a>
+    <div id='face_book_f'>
+      Signed in as
+      <strong id='username'>
+        Сергей Славин
+      </strong>
+      <a href="/signout" id="sign_out">Sign out</a>
     </div>
-  </body>
-</html>
+  </div>
+</body>
+<div id='admin_panel'></div>
+<div class='articles'>
+  <div id='article'>
+    <img alt="250px-friends_titles" class="thumbnail" id="image_b" src="/system/admins/images/000/000/020/medium/250px-Friends_titles.jpg?1342443328" />
+    <a href="/article/20" id="title_l">test</a>
+    <p>
+      test<br>
+    </p>
+    <br>
+    <div id='p_data'>
+      Published:
+      July 16, 2012  AT 12:55
+    </div>
+    <p>
+      <a href="/article/20" id="more">Read more...</a>
+    </p>
+    <hr>
+  </div>
+  <div id='article'>
+    <img alt="83d5fe1db35fc39aad85f84560ce2ef7" class="thumbnail" id="image_b" src="/system/admins/images/000/000/018/medium/83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1342279368" />
+    <a href="/article/18" id="title_l">Парадигма</a>
+    <p>
+      <p><b>Паради́гма</b> (от <a href="http://ru.wikipedia.org/wiki/%D0%94%D1%80%D0%B5%D0%B2%D0%BD%D0%B5%D0%B3%D1%80%D0%B5%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Древнегреческий язык">др.-греч.</a> <span lang="grc"><span style="font-family: palatino linotype, new athena unicode, athena, gentium, code2000, serif; font-size: 105%;">παράδειγμα</span></span>, «пример, модель, образец» &lt; <span lang="grc"><span style="font-family: palatino linotype, new athena unicode, athena, gentium, code2000, serif; font-size: 105%;">παραδείκνυμι</span></span>&nbsp;—
+ «сравниваю») в философии науки&nbsp;— означает совокупность явных и неявных 
+(и часто не осознаваемых) предпосылок, определяющих научные исследования
+ и признанных на данном этапе развития науки, а также универсальный 
+метод принятия эволюционных решений, гносеологическая <a href="http://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C" title="Модель">модель</a> эволюционной деятельности.</p>
+<p>Первоначально слово использовалось в <a href="http://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D0%BD%D0%B3%D0%B2%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0" title="Лингвистика">лингвистике</a> и <a href="http://ru.wikipedia.org/wiki/%D0%A0%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BA%D0%B0" title="Риторика">риторике</a>. Так, например, <a href="http://ru.wikipedia.org/wiki/%D0%AD%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C_%D0%91%D1%80%D0%BE%D0%BA%D0%B3%D0%B0%D1%83%D0%B7%D0%B0_%D0%B8_%D0%95%D1%84%D1%80%D0%BE%D0%BD%D0%B0" title="Энциклопедический словарь Брокгауза и Ефрона">ЭСБЕ</a>
+ определяет этот термин следующим образом: «в грамматике слово, служащее
+ образцом склонения или спряжения; в риторике&nbsp;— пример, взятый из 
+истории и приведенный с целью сравнения». Словарь <i><a href="http://ru.wikipedia.org/w/index.php?title=Merriam-Webster&amp;action=edit&amp;redlink=1" class="new" title="Merriam-Webster (страница отсутствует)">Merriam-Webster</a></i> (в англ. wiki: <a href="http://ru.wikipedia.org/w/index.php?title=%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:En:Merriam-Webster&amp;action=edit&amp;redlink=1" class="new" title="Википедия:En:Merriam-Webster (страница отсутствует)">Merriam-Webster</a>)
+ 1900 года дает аналогичное определение его использования только в 
+контексте грамматики или как термин для иллюстрирующей притчи или басни. <br></p>
+    </p>
+    <br>
+    <div id='p_data'>
+      Published:
+      July 14, 2012  AT 15:19
+    </div>
+    <p>
+      <a href="/article/18" id="more">Read more...</a>
+    </p>
+    <hr>
+  </div>
+</div>
+<br>
+<div id='footer'></div>

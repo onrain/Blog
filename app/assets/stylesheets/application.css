@@ -13,7 +13,7 @@
  */
 
 #textarea_form{ width: 400px; }
-html { background-color: #33CCFF; margin-top:12px;}
+html { background-color: #33CCFF; margin-top:12px; max-width: 1600px;}
 #footer { background-image: url(bg-m.png); width: 1505px; height: 90px; display: table; margin: 0 auto;}
 #admin_label a:hover { color: #33CCFF; }
 #new_btn{ width:60px; margin-left: 40px; }
