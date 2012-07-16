@@ -27,23 +27,19 @@
   <script src="/assets/comments.js?body=1" type="text/javascript"></script>
   <script src="/assets/application.js?body=1" type="text/javascript"></script>
   <meta content="authenticity_token" name="csrf-param" />
-  <meta content="yLxzHHwEW372IrjaQDtS9HRh5D9RT7ppSGGdbBnrAxI=" name="csrf-token" />
+  <meta content="oPncyp0XUqRYTDEU+DGp6ooKmZEA5WI0hfuJQdACraM=" name="csrf-token" />
 </head>
 <body>
   <div id='header'>
     <a href="/home" id="main-label">Orange Blog</a>
     <div id='face_book_f'>
-      Signed in as
-      <strong id='username'>
-        Сергей Славин
-      </strong>
-      <a href="/signout" id="sign_out">Sign out</a>
+      <a href="/auth/facebook" id="sign_in">Sign in with Facebook</a>
     </div>
   </div>
 </body>
 <div id='admin_panel'></div>
 <div class='article_show'>
-  <a href="/home" id="back_url">Back</a>
+  <div id='back_url'>Back</div>
   <div id='art_div'>
     <p>
       Парадигма
@@ -86,26 +82,10 @@
     <hr>
   </div>
   <div id='comments_d'>
-    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="yLxzHHwEW372IrjaQDtS9HRh5D9RT7ppSGGdbBnrAxI=" /></div>
-  <div class='well'>
-    Не верьте тому, что пишут перед вашим псевдонимом, Сергей Славин.
-    <h4></h4>
-    <div id='curent_email'>
-    pankpeople@yandex.ru
-  </div>
-</div>
-<input id="comment_username" name="comment[username]" type="hidden" value="Сергей Славин" />
-<input id="comment_email" name="comment[email]" type="hidden" value="pankpeople@yandex.ru" />
-<input id="comment_post_id" name="comment[post_id]" type="hidden" value="18" />
-<input id="comment_admin_id" name="comment[admin_id]" type="hidden" value="18" />
-<div class='field'>
-  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
-</textarea>
-</div>
-<div class='actions'>
-  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
-</div>
-</form>
+    <h3>
+      Please login:
+      <a href="/auth/facebook" id="sign_in_art"><img alt="Facebook_logo2" height="50" src="/assets/facebook_logo2.png" width="50" /></a>
+    </h3>
     <hr>
     <div id='comment_box'>
       <p>

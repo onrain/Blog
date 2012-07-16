@@ -1,0 +1,33 @@
+require 'spec_helper'
+
+describe Admin do
+  before(:all) do
+    @admin = Admin.build(:admin)
+    @admin.save
+  end
+  it "should be able to create a new admin" do
+    puts @admin.errors.inspect
+    @admin.should be_valid
+  end
+  it "should require origin to be unique" do
+    admin = Admin.new(
+    :id => 1, 
+    :article_content => 'test content',
+    :article_content => 'test description',
+    :data_create => Time.now,
+    :published => '1',
+    :title => 'test title',
+    :image => 'test.jpg'
+   )
+    admin.save
+    admin.should_not be_valid
+    admin.errors[:article_content].should == ["article_content has already been taken"]
+  end
+  it "should not update with invalid data" do
+    @admin.update_attributes({:image => 'kasjdfkhd'})
+    @admin.should_not be_valid
+  end
+  after(:all) do
+    @admin.delete
+  end
+end
