@@ -26,7 +26,7 @@
   .control-group
     = f.label :data_create, :class => 'control-label'
     .controls
-      = f.datetime_select :data_create, :class => 'datetime_select'
+    = f.text_field :data_create, class:"datepicker", :"data-date-format"=>:"dd-mm-yyyy"
   .control-group
     = f.label :article_description, :class => 'control-label'
     .controls

@@ -7,7 +7,10 @@
   = csrf_meta_tags
 %body
   #header
-    = link_to "Orange Blog", home_path, id:"main-label"
+    -if request.fullpath =~ /admin/
+      = link_to "Orange Blog", admins_path, id:"main-label"
+    - else
+      = link_to "Orange Blog", home_path, id:"main-label"
     #face_book_f
       - if current_user
         Signed in as

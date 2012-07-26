@@ -6,7 +6,6 @@
   <link href="/assets/admins.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/comments.css?body=1" media="all" rel="stylesheet" type="text/css" />
-  <link href="/assets/datepicker.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/home.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/sessions.css?body=1" media="all" rel="stylesheet" type="text/css" />
@@ -26,7 +25,6 @@
   <script src="/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
   <script src="/assets/twitter/bootstrap.js?body=1" type="text/javascript"></script>
   <script src="/assets/admins.js?body=1" type="text/javascript"></script>
-  <script src="/assets/bootstrap-datepicker.js?body=1" type="text/javascript"></script>
   <script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
   <script src="/assets/comments.js?body=1" type="text/javascript"></script>
   <script src="/assets/home.js?body=1" type="text/javascript"></script>
@@ -48,8 +46,72 @@
   </div>
 </body>
 <div id='admin_panel'></div>
-<script src="/assets/comments.js?body=1" type="text/javascript"></script>
-<div class='articles'>
+<div class='article_show'>
+  <div id='back_url'>Back</div>
+  <div id='art_div'>
+    <p>
+      asdasdasd
+    </p>
+    <p>
+      <img alt="83d5fe1db35fc39aad85f84560ce2ef7" class="thumbnail" id="show_img" src="/system/posts/images/000/000/011/medium/83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1343316074" />
+    </p>
+    <p>
+      asdasdasd<br>
+    </p>
+    <p>
+      Data create:
+      <i>
+        2012-07-26 18:21:00 +0300
+      </i>
+    </p>
+    <hr>
+  </div>
+  <div id='comments_d'>
+    <div class='alert alert-success'>
+  <button class='close' data-dismiss='alert'>
+    ×
+  </button>
+  Comment was successfully created.
 </div>
-<br>
+<form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="zWCvR6zCh8MKZB4tY9zEabHUKrbZxbvE6HW66qhUwg0=" /></div>
+  <div class='well'>
+    Анекдоты о блондинках высмеивают арийский тип, Sergey Slavin!
+    <h4></h4>
+    <div id='curent_email'>
+    pankpeople@yandex.ru
+  </div>
+</div>
+<input id="comment_username" name="comment[username]" type="hidden" value="Sergey Slavin" />
+<input id="comment_email" name="comment[email]" type="hidden" value="pankpeople@yandex.ru" />
+<input id="comment_post_id" name="comment[post_id]" type="hidden" value="11" />
+<input id="comment_admin_id" name="comment[admin_id]" type="hidden" value="11" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
+</div>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
+    <hr>
+    <div id='comment_box'>
+      <p>
+        <b>Username</b>
+        Sergey Slavin
+      </p>
+      <p>
+        <b>Email</b>
+        pankpeople@yandex.ru
+      </p>
+      <p>
+        2012-07-26 18:24:30 +0300
+      </p>
+      <p>
+        круто круто круто
+      </p>
+      <hr>
+    </div>
+  </div>
+  
+</div>
 <div id='footer'></div>

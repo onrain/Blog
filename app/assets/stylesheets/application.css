@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require datepicker
  */
 
 #textarea_form{ width: 400px; }

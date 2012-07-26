@@ -6,7 +6,10 @@
   <link href="/assets/admins.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/comments.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/datepicker.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/home.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/sessions.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
   <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
   <script src="/assets/twitter/bootstrap/bootstrap-transition.js?body=1" type="text/javascript"></script>
@@ -23,11 +26,14 @@
   <script src="/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
   <script src="/assets/twitter/bootstrap.js?body=1" type="text/javascript"></script>
   <script src="/assets/admins.js?body=1" type="text/javascript"></script>
+  <script src="/assets/bootstrap-datepicker.js?body=1" type="text/javascript"></script>
   <script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
   <script src="/assets/comments.js?body=1" type="text/javascript"></script>
+  <script src="/assets/home.js?body=1" type="text/javascript"></script>
+  <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
   <script src="/assets/application.js?body=1" type="text/javascript"></script>
   <meta content="authenticity_token" name="csrf-param" />
-  <meta content="oPncyp0XUqRYTDEU+DGp6ooKmZEA5WI0hfuJQdACraM=" name="csrf-token" />
+  <meta content="zWCvR6zCh8MKZB4tY9zEabHUKrbZxbvE6HW66qhUwg0=" name="csrf-token" />
 </head>
 <body>
   <div id='header'>
@@ -35,7 +41,7 @@
     <div id='face_book_f'>
       Signed in as
       <strong id='username'>
-        Сергей Славин
+        Sergey Slavin
       </strong>
       <a href="/signout" id="sign_out">Sign out</a>
     </div>
@@ -44,48 +50,6 @@
 <div id='admin_panel'></div>
 <script src="/assets/comments.js?body=1" type="text/javascript"></script>
 <div class='articles'>
-  <div id='article'>
-    <img alt="250px-friends_titles" class="thumbnail" id="image_b" src="/system/admins/images/000/000/020/medium/250px-Friends_titles.jpg?1342443328" />
-    <a href="/article/20" id="title_l">test</a>
-    <p>
-      test<br>
-    </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      July 16, 2012  AT 12:55
-    </div>
-    <p>
-      <a href="/article/20" id="more">Read more...</a>
-    </p>
-    <hr>
-  </div>
-  <div id='article'>
-    <img alt="83d5fe1db35fc39aad85f84560ce2ef7" class="thumbnail" id="image_b" src="/system/admins/images/000/000/018/medium/83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1342279368" />
-    <a href="/article/18" id="title_l">Парадигма</a>
-    <p>
-      <p><b>Паради́гма</b> (от <a href="http://ru.wikipedia.org/wiki/%D0%94%D1%80%D0%B5%D0%B2%D0%BD%D0%B5%D0%B3%D1%80%D0%B5%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%8F%D0%B7%D1%8B%D0%BA" title="Древнегреческий язык">др.-греч.</a> <span lang="grc"><span style="font-family: palatino linotype, new athena unicode, athena, gentium, code2000, serif; font-size: 105%;">παράδειγμα</span></span>, «пример, модель, образец» &lt; <span lang="grc"><span style="font-family: palatino linotype, new athena unicode, athena, gentium, code2000, serif; font-size: 105%;">παραδείκνυμι</span></span>&nbsp;—
- «сравниваю») в философии науки&nbsp;— означает совокупность явных и неявных 
-(и часто не осознаваемых) предпосылок, определяющих научные исследования
- и признанных на данном этапе развития науки, а также универсальный 
-метод принятия эволюционных решений, гносеологическая <a href="http://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C" title="Модель">модель</a> эволюционной деятельности.</p>
-<p>Первоначально слово использовалось в <a href="http://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D0%BD%D0%B3%D0%B2%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0" title="Лингвистика">лингвистике</a> и <a href="http://ru.wikipedia.org/wiki/%D0%A0%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%BA%D0%B0" title="Риторика">риторике</a>. Так, например, <a href="http://ru.wikipedia.org/wiki/%D0%AD%D0%BD%D1%86%D0%B8%D0%BA%D0%BB%D0%BE%D0%BF%D0%B5%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B9_%D1%81%D0%BB%D0%BE%D0%B2%D0%B0%D1%80%D1%8C_%D0%91%D1%80%D0%BE%D0%BA%D0%B3%D0%B0%D1%83%D0%B7%D0%B0_%D0%B8_%D0%95%D1%84%D1%80%D0%BE%D0%BD%D0%B0" title="Энциклопедический словарь Брокгауза и Ефрона">ЭСБЕ</a>
- определяет этот термин следующим образом: «в грамматике слово, служащее
- образцом склонения или спряжения; в риторике&nbsp;— пример, взятый из 
-истории и приведенный с целью сравнения». Словарь <i><a href="http://ru.wikipedia.org/w/index.php?title=Merriam-Webster&amp;action=edit&amp;redlink=1" class="new" title="Merriam-Webster (страница отсутствует)">Merriam-Webster</a></i> (в англ. wiki: <a href="http://ru.wikipedia.org/w/index.php?title=%D0%92%D0%B8%D0%BA%D0%B8%D0%BF%D0%B5%D0%B4%D0%B8%D1%8F:En:Merriam-Webster&amp;action=edit&amp;redlink=1" class="new" title="Википедия:En:Merriam-Webster (страница отсутствует)">Merriam-Webster</a>)
- 1900 года дает аналогичное определение его использования только в 
-контексте грамматики или как термин для иллюстрирующей притчи или басни. <br></p>
-    </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      July 14, 2012  AT 15:19
-    </div>
-    <p>
-      <a href="/article/18" id="more">Read more...</a>
-    </p>
-    <hr>
-  </div>
 </div>
 <br>
 <div id='footer'></div>

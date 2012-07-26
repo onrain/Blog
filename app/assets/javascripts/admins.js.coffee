@@ -13,3 +13,5 @@ $(document).ready ->
     
   $('.field_with_errors').click ->
     $(this).removeClass('field_with_errors')
+    
+  $('.datepicker').datepicker()
