@@ -9,12 +9,12 @@ class AdminsController < ApplicationController
     else
       limit = params[:l]
     end
-    @last_articles = Admin.limit(limit)
+    @last_articles = Post.limit(limit)
   end
   
   def show
-    @admin = Admin.find(params[:id])
-    respond_with @admin
+    @post = Post.find(params[:id])
+    respond_with @post
   end
   
   def comments
@@ -23,42 +23,44 @@ class AdminsController < ApplicationController
   end
   
   def published
-    @admins_p = Admin.where(:published => 1).paginate page: params[:page], order: 'published desc', per_page: 10
-    respond_with @admins_p
+    @posts_p = Post.where(:published => 1).paginate page: params[:page], order: 'published desc', per_page: 10
+    respond_with @posts_p
   end
 
   
   def npublished
-    @admins_no_p = Admin.where(:published => 0).paginate page: params[:page], order: 'published desc', per_page: 10
-    respond_with @admins_no_p
+    @posts_no_p = Post.where(:published => 0).paginate page: params[:page], order: 'published desc', per_page: 10
+    respond_with @posts_no_p
   end
 
   def new
-    @admin = Admin.new
+    @post = Post.new
   end
 
   def edit
-    @admin = Admin.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def create
-    @admin = Admin.new(params[:admin])
-    @admin.save
-    respond_with @admin
+    @post = Post.new(params[:post])
+    @post.save
+    flash[:notice] = "The article was successfully create!"
+    respond_with @post, location:admin_path(@post)
   end
 
 
   def update
-    @admin = Admin.find(params[:id])
-    @admin.update_attributes(params[:admin])
-    respond_with @admin
+    @post = Post.find(params[:id])
+    @post.update_attributes(params[:post])
+    respond_with @post
   end
 
 
   def destroy
-    @admin = Admin.find(params[:id])
-    @admin.destroy
-    respond_with @admin
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = "The article has successfully deleted!"
+    respond_with @post, location:admins_url
   end
   
 protected

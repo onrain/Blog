@@ -11,27 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714105022) do
+ActiveRecord::Schema.define(:version => 20120726133748) do
 
   create_table "admin_logins", :force => true do |t|
     t.string   "login"
     t.string   "password"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "admins", :force => true do |t|
-    t.string   "title"
-    t.integer  "published",           :default => 0
-    t.datetime "data_create"
-    t.text     "article_description"
-    t.text     "article_content"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
   end
 
   create_table "comments", :force => true do |t|
@@ -43,6 +29,20 @@ ActiveRecord::Schema.define(:version => 20120714105022) do
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.integer  "admin_id"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.integer  "published",           :default => 0
+    t.datetime "data_create"
+    t.text     "article_description"
+    t.text     "article_content"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "users", :force => true do |t|

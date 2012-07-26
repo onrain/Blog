@@ -1,31 +1,36 @@
 =render 'nav'
-- model_class = Admin
+- model_class = Post
+-if flash[:notice]
+  %div{class:"alert alert-success", style:"width:300px; margin-left:5px;"}
+    %button{:class=>"close", :"data-dismiss"=>:"alert"}
+      ×
+    =flash[:notice]
 .page-header
   %h1=t '.title', :default => model_class.model_name.human
 
 %p
   %strong= model_class.human_attribute_name(:title) + ':'
   %br
-  = @admin.title
+  = @post.title
 %p
   %strong= model_class.human_attribute_name(:published) + ':'
   %br
-  = @admin.published
+  = @post.published
 %p
   %strong= model_class.human_attribute_name(:data_create) + ':'
   %br
-  = set_time @admin.data_create
+  = set_time @post.data_create
 %p
   %strong= model_class.human_attribute_name(:article_description) + ':'
   %br
-  = @admin.article_description.html_safe
+  = @post.article_description.html_safe
 %p
   %strong= model_class.human_attribute_name(:article_content) + ':'
   %br
-  = @admin.article_content.html_safe
+  = @post.article_content.html_safe
 %p
-  = image_tag @admin.image(:medium)
+  = image_tag @post.image(:medium)
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), admins_path, :class => 'btn'
-  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(@admin), :class => 'btn'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_path(@admin), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'
+  = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(@post), :class => 'btn'
+  = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_path(@post), :method => "delete", :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-danger'

@@ -6,9 +6,14 @@ OrangeBlog::Application.routes.draw do
     get "logout" => :destroy
   end
   
+ 
+  #match "admins/:id" => "admins#show"
+  match "admins/post/new" => "admins#new"
   match "admins/comments" => "admins#comments"
-  match "admins/published" => "admins#published"
-  match "admins/npublished" => "admins#npublished"
+  match "admins/post/published" => "admins#published"
+  match "admins/post/npublished" => "admins#npublished"
+  
+  
   match 'auth/:provider/callback', to: 'sessions#create'
   
   match 'auth/failure', to: redirect('/')

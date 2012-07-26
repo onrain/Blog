@@ -1,3 +1,15 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$(document).ready ->
+  
+  path = window.location.pathname
+  
+  if path is "/admins/post/new"
+    $('#new_art').addClass('active')
+  if path is "/admins/comments"
+    $('#comments').addClass('active')
+  if path is "/admins/post/published"
+    $('#pub_art').addClass('active')
+  if path is "/admins/post/npublished"
+    $('#n_pub_art').addClass('active')
+    
+  $('.field_with_errors').click ->
+    $(this).removeClass('field_with_errors')

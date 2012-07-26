@@ -1,8 +1,5 @@
 # encoding: utf-8
 module CommentsHelper
-  def set_time(current_time)
-    current_time.strftime('%B %d, %Y  AT %H:%M')
-  end
   
   def hello_lepra(username)
     username = username.to_s
