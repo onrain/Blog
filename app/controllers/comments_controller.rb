@@ -36,7 +36,10 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-    respond_with @comment
+    flash[:aletr] = "This comment is last!" if Comment.count < 2
+    if @comment.destroy
+      flash[:notice] = "The article has successfully deleted!"
+      respond_with @comment, location:request.env['HTTP_REFERER']
+    end
   end
 end

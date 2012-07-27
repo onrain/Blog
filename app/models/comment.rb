@@ -5,4 +5,5 @@ class Comment < ActiveRecord::Base
   validates :email, :presence => true, 
                     :length => {:minimum => 6, :maximum => 254},
                     :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
+                    
 end

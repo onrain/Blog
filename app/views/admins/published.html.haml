@@ -1,30 +1,33 @@
 = render 'nav'
-.pub_art
-  %h1 Published articles
-  %table.table.table-striped
-    %thead
-      %tr
-        %th id
-        %th image
-        %th title
-        %th published
-        %th created
-        %th article description
-        %th article content
-        %th=t '.actions', :default => t("helpers.actions")
-    %tbody
-      - @posts_p.each do |post|
+- unless @posts_p.empty?
+  .pub_art
+    %h1 Published articles
+    %table.table.table-striped
+      %thead
         %tr
-          %td= link_to post.id, admin_path(post)
-          %td= image_tag post.image(:small) if post.image?
-          %td= post.title
-          %td= post.published
-          %td= set_time post.date_create
-          %td= truncate(post.article_description.html_safe, :length => 123, :omission =>"...")
-          %td= truncate(post.article_content.html_safe, :length => 123, :omission =>"...")
-          %td
-            = link_to t('.show', :default => t("helpers.links.show")), admin_path(post), :class => 'btn btn-mini'
-            = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(post), :class => 'btn btn-mini'
-            = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_path(post), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
-
-  = will_paginate @posts_p
+          %th id
+          %th image
+          %th title
+          %th published
+          %th created
+          %th article description
+          %th article content
+          %th=t '.actions', :default => t("helpers.actions")
+      %tbody
+        - @posts_p.each do |post|
+          %tr
+            %td= link_to post.id, admin_path(post)
+            %td= image_tag post.image(:small) if post.image?
+            %td= post.title
+            %td= post.published
+            %td= set_time post.date_create
+            %td= truncate(post.article_description.html_safe, :length => 123, :omission =>"...")
+            %td= truncate(post.article_content.html_safe, :length => 123, :omission =>"...")
+            %td
+              = link_to t('.show', :default => t("helpers.links.show")), admin_path(post), :class => 'btn btn-mini'
+              = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(post), :class => 'btn btn-mini'
+              = link_to t('.destroy', :default => t("helpers.links.destroy")), admin_path(post), :method => :delete, :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')), :class => 'btn btn-mini btn-danger'
+  
+    = will_paginate @posts_p
+- else
+  %h3 At the moment there not are any published articles!

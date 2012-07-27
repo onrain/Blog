@@ -50,24 +50,72 @@
   </div>
 </body>
 <div id='admin_panel'></div>
-<script src="/assets/comments.js?body=1" type="text/javascript"></script>
-<div class='articles'>
-  <div id='article'>
-    
-    <a href="/article/28" id="title_l">lol</a>
+<div class='article_show'>
+  <div id='back_url'>Back</div>
+  <div id='art_div'>
+    <p>
+      222
+    </p>
+    <p>
+      
+    </p>
     <p>
       <br>
     </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      
-    </div>
     <p>
-      <a href="/article/28" id="more">Read more...</a>
+      Date create:
+      <i>
+        July 27, 2012  AT 14:01
+      </i>
     </p>
     <hr>
   </div>
+  <div id='comments_d'>
+    <div class='alert alert-success'>
+  <button class='close' data-dismiss='alert'>
+    ×
+  </button>
+  Comment was successfully created.
 </div>
-<br>
+<form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="hUPTsgOYkHnvZNox8GmE7577VsDdouVexHKUtrkyJzY=" /></div>
+  <div class='well'>
+    Патрис Лумумба родился 2 июля, Sergey Slavin!
+    <h4></h4>
+    <div id='curent_email'>
+    pankpeople@yandex.ru
+  </div>
+</div>
+<input id="comment_username" name="comment[username]" type="hidden" value="Sergey Slavin" />
+<input id="comment_email" name="comment[email]" type="hidden" value="pankpeople@yandex.ru" />
+<input id="comment_post_id" name="comment[post_id]" type="hidden" value="31" />
+<input id="comment_admin_id" name="comment[admin_id]" type="hidden" value="31" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
+</div>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
+    <hr>
+    <div id='comment_box'>
+      <p>
+        <b>Username</b>
+        Sergey Slavin
+      </p>
+      <p>
+        <b>Email</b>
+        pankpeople@yandex.ru
+      </p>
+      <p>
+        July 27, 2012  AT 15:26
+      </p>
+      <p>
+        HEllo
+      </p>
+      <hr>
+    </div>
+  </div>
+  
+</div>
 <div id='footer'></div>

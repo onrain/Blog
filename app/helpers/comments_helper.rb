@@ -89,4 +89,5 @@ module CommentsHelper
     l = rand(hello.size)
     hello[l]
   end
+  
 end

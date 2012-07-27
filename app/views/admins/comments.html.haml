@@ -1,13 +1,30 @@
 =render 'nav'
-.admin_comment
-  %h1 Comments
-  - @comment.each do |c|
+
+-if flash[:notice]
+  %div{class:"alert alert-success", style:"width:300px; margin-left:5px;"}
+    %button{:class=>"close", :"data-dismiss"=>:"alert"}
+      ×
+    =flash[:notice]
+
+-if flash[:alert]
+  %div{class:"alert alert-success", style:"width:300px; margin-left:5px;"}
+    %button{:class=>"close", :"data-dismiss"=>:"alert"}
+      ×
+    =flash[:alert]    
+    
+    
+- unless @comment.empty?
+  .admin_comment
+    %h1 Comments
+    - @comment.each do |c|
+      %p
+        = c.username
+        = c.email
+        %br
+        = truncate(c.comment_content, length:10)
+        = link_to '[x]', c, :confirm => 'Are you sure?', :method => :delete
+      %hr
     %p
-      = c.username
-      = c.email
-      %br
-      = truncate(c.comment_content, length:10)
-      = link_to '[x]', c, :confirm => 'Are you sure?', :method => :delete
-    %hr
-  %p
-    = will_paginate @comment
+      = will_paginate @comment
+- else
+  %h3 At the moment there not are any comments!
