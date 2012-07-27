@@ -24,6 +24,8 @@ describe Admin do
     @admin.title = 'a' * 130
     @admin.should be_valid
   end
+  
+ 
   after(:all) do
     @admin.delete
   end

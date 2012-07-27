@@ -19,7 +19,7 @@
 %p
   %strong= model_class.human_attribute_name(:data_create) + ':'
   %br
-  = set_time @post.data_create
+  = set_time @post.date_create
 %p
   %strong= model_class.human_attribute_name(:article_description) + ':'
   %br
@@ -29,7 +29,7 @@
   %br
   = @post.article_content.html_safe
 %p
-  = image_tag @post.image(:medium)
+  = image_tag @post.image(:medium) if @post.image?
 .form-actions
   = link_to t('.back', :default => t("helpers.links.back")), admins_path, :class => 'btn'
   = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(@post), :class => 'btn'

@@ -43,6 +43,8 @@ class AdminsController < ApplicationController
 
   def create
     @post = Post.new(params[:post])
+    Time.zone = "Kyiv"
+    @post.date_create = Time.zone.now if params[:date_create].blank?
     @post.save
     flash[:notice] = "The article was successfully create!"
     respond_with @post, location:admin_path(@post)
@@ -52,7 +54,8 @@ class AdminsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(params[:post])
-    respond_with @post
+    flash[:notice] = "Update success!"
+    respond_with @post, location:admin_path(@post)
   end
 
 
@@ -69,4 +72,5 @@ protected
       redirect_to login_url, :alert=>"Please login"
     end
   end
+  
 end

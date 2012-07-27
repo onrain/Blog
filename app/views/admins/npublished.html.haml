@@ -19,7 +19,7 @@
           %td= image_tag post.image(:small) if post.image?
           %td= post.title
           %td= post.published
-          %td= set_time post.data_create
+          %td= set_time post.date_create
           %td= truncate(post.article_description.html_safe, :length => 123, :omission =>"...")
           %td= truncate(post.article_content.html_safe, :length => 123, :omission =>"...")
           %td

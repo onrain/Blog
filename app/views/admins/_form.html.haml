@@ -1,13 +1,16 @@
+%link{rel:"stylesheet", href:"http://evandrix-mvc-mini-profiler.googlecode.com/hg/SampleWeb/Content/themes/base/jquery.ui.datepicker.css"}
+= stylesheet_link_tag "jquery-ui-1.8.22.custom.css"
 %script{:type => "text/javascript", :src=>"http://js.nicedit.com/nicEdit-latest.js"}
 %script{:type=>"text/javascript"}
   bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+
  
 -if notice
   %div{class:"alert alert-error"}
     %button{:class=>"close", :"data-dismiss"=>:"alert", :value=>"x"}
     =notice
 
-= form_for @post, url:admins_path, :html => { :class => 'form-horizontal' } do |f|
+= form_for @post, url:get_admin_path(@post), :html => { :class => 'form-horizontal' } do |f|
   -if @post.errors.any?
     %div{class:"alert alert-error"}
       %h3= "#{pluralize(@post.errors.count, "error")} prohibited this admin from being saved:"
@@ -24,9 +27,9 @@
     .controls
       = f.check_box :published, :class => 'number_field'
   .control-group
-    = f.label :data_create, :class => 'control-label'
+    = f.label :date_create, :class => 'control-label'
     .controls
-    = f.text_field :data_create, class:"datepicker", :"data-date-format"=>:"dd-mm-yyyy"
+      = f.text_field :date_create, :class=>"date_create"
   .control-group
     = f.label :article_description, :class => 'control-label'
     .controls

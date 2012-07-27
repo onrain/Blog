@@ -14,4 +14,10 @@ $(document).ready ->
   $('.field_with_errors').click ->
     $(this).removeClass('field_with_errors')
     
-  $('.datepicker').datepicker()
+  $('.date_create').datetimepicker(
+    dateFormat: "yy-mm-dd",
+    timeFormat: 'hh:mm tt',
+    altFormat: 'yy-mm-dd hh:mm:ss',
+    altField: 'hidden_announcement_date',
+    altFieldTimeOnly: 'false'
+  )

@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
   has_many :comments, :dependent=>:destroy
-  attr_accessible :article_content, :article_description, :data_create, :published, :title, :image
+  attr_accessible :article_content, :article_description, :date_create, :published, :title, :image
   validates :title, :presence=>true, :length=>{:minimum=>3, :maximum=>150}
   has_attached_file :image,
     :styles => {

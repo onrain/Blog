@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726133748) do
+ActiveRecord::Schema.define(:version => 20120726170239) do
 
   create_table "admin_logins", :force => true do |t|
     t.string   "login"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20120726133748) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.integer  "published",           :default => 0
-    t.datetime "data_create"
     t.text     "article_description"
     t.text     "article_content"
     t.datetime "created_at",                         :null => false
@@ -43,6 +42,7 @@ ActiveRecord::Schema.define(:version => 20120726133748) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "date_create"
   end
 
   create_table "users", :force => true do |t|

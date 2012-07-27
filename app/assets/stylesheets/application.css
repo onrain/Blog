@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require_tree .
- *= require datepicker
+ *= require jquery-ui-timepicker-addon
  */
 
 #textarea_form{ width: 400px; }

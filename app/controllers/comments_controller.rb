@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
   respond_to :html, :json, :xml
   
   def index    
-    @articles = Post.where(:published => 1).paginate page: params[:page], order: 'data_create desc', per_page: 10
+    @articles = Post.where(:published => 1).paginate page: params[:page], order: 'date_create desc', per_page: 10
     respond_with @articles
   end
 
@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
     Time.zone = "Kyiv"
-    @comment.data_p = Time.zone.now 
+    @comment.data_p = Time.zone.now
     respond_with(@comment) do |format|
       if @comment.save
         format.html { redirect_to request.env['HTTP_REFERER'], alert: 'Comment was successfully created.' }
