@@ -21,8 +21,9 @@
         = c.username
         = c.email
         %br
-        = truncate(c.comment_content, length:10)
+        = link_to truncate(c.comment_content, length:30), article_path(c.post_id)
         = link_to '[x]', c, :confirm => 'Are you sure?', :method => :delete
+        = link_to "[edit]", admins_path+"/edit/comment/#{c.id}"
       %hr
     %p
       = will_paginate @comment

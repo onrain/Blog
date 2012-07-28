@@ -7,11 +7,18 @@ OrangeBlog::Application.routes.draw do
   end
   
   
+  controller :admins do
+    get "admins/edit/comment/:id" => :edit_comment
+    post "admins/update/comment/:id" => :update_comment
+  end
+  
+  match "admins/update/comment/:id" => "admins#update_comment"
+  match "admins/edit/comment/:id" => "admins#edit_comment"
   match "admins/post/new" => "admins#new"
   match "admins/comments" => "admins#comments"
   match "admins/post/published" => "admins#published"
   match "admins/post/npublished" => "admins#npublished"
- 
+  #get "admins/edit_comment/:id" => "admins#edit_comment"
   
   match 'auth/:provider/callback', to: 'sessions#create'
   

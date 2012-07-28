@@ -1,0 +1,40 @@
+%link{rel:"stylesheet", href:"http://evandrix-mvc-mini-profiler.googlecode.com/hg/SampleWeb/Content/themes/base/jquery.ui.datepicker.css"}
+= stylesheet_link_tag "jquery-ui-1.8.22.custom.css"
+%script{:type => "text/javascript", :src=>"http://js.nicedit.com/nicEdit-latest.js"}
+%script{:type=>"text/javascript"}
+  bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+
+ 
+-if notice
+  %div{class:"alert alert-error"}
+    %button{:class=>"close", :"data-dismiss"=>:"alert", :value=>"x"}
+    =notice
+
+= form_for @comment, url:admins_path+"/update/comment/#{@comment.id}", :html => { :class => 'form-horizontal' } do |f|
+  -if @comment.errors.any?
+    %div{class:"alert alert-error"}
+      %h3= "#{pluralize(@comment.errors.count, "error")} prohibited this admin from being saved:"
+      %ul
+        - @post.errors.full_messages.each do |msg|
+          %li= msg
+          
+  .control-group
+    = f.label :comment_content, :class => 'control-label'
+    .controls
+      = f.text_area :comment_content, id:"textarea_form", :class => 'text_area', rows:10
+  .control-group
+    = f.label "Date published", :class => 'control-label'
+    .controls
+      = f.text_field :data_p, :class => 'data_p'
+  .control-group
+    = f.label "E-mail", :class => 'control-label'
+    .controls
+      = f.text_field :email
+  .control-group
+    = f.label "Name & Surname", :class => 'control-label'
+    .controls
+      = f.text_field :username
+
+  .form-actions
+    = f.submit nil, :class => 'btn btn-primary'
+    = link_to t('.cancel', :default => t("helpers.links.cancel")), admins_path, :class => 'btn'

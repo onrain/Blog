@@ -21,3 +21,11 @@ $(document).ready ->
     altField: 'hidden_announcement_date',
     altFieldTimeOnly: 'false'
   )
+  
+  $('.data_p').datetimepicker(
+    dateFormat: "yy-mm-dd",
+    timeFormat: 'hh:mm tt',
+    altFormat: 'yy-mm-dd hh:mm:ss',
+    altField: 'hidden_announcement_date',
+    altFieldTimeOnly: 'false'
+  )

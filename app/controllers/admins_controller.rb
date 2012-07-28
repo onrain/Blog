@@ -66,6 +66,17 @@ class AdminsController < ApplicationController
     respond_with @post, location:admins_url
   end
   
+  def edit_comment
+    @comment = Comment.find(params[:id])
+  end
+  
+  def update_comment
+    @comment = Comment.find(params[:id])
+    @comment.update_attributes(params[:comment])
+    flash[:notice] = "Comment Update success!"
+    redirect_to admins_comments_path
+  end
+  
 protected
   def authorize
     unless AdminLogin.find_by_id(session[:login_user])
