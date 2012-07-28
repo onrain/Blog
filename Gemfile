@@ -25,3 +25,5 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'rspec-rails'
 
 gem 'jquery_datepicker'
+
+gem 'devise'

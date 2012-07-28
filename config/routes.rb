@@ -1,5 +1,10 @@
 OrangeBlog::Application.routes.draw do
   
+  devise_for :admin_auths do get '/admin_auths/sign_out' => 'devise/sessions#destroy' end
+
+  
+  devise_for :users
+
   controller :session_admin do
     get "login" => :new
     post "login" => :create

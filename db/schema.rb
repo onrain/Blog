@@ -11,14 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120726170239) do
+ActiveRecord::Schema.define(:version => 20120728153325) do
 
-  create_table "admin_logins", :force => true do |t|
-    t.string   "login"
-    t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "admin_auths", :force => true do |t|
+    t.string   "email",                  :default => "", :null => false
+    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             :null => false
+    t.datetime "updated_at",                             :null => false
   end
+
+  add_index "admin_auths", ["email"], :name => "index_admin_auths_on_email", :unique => true
+  add_index "admin_auths", ["reset_password_token"], :name => "index_admin_auths_on_reset_password_token", :unique => true
 
   create_table "comments", :force => true do |t|
     t.string   "username"
