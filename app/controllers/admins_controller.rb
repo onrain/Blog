@@ -1,6 +1,5 @@
 class AdminsController < ApplicationController
-  before_filter :authorize
-  
+ 
   respond_to :html, :json, :xml
   
   def index
@@ -76,12 +75,5 @@ class AdminsController < ApplicationController
     flash[:notice] = "Comment Update success!"
     redirect_to admins_comments_path
   end
-  
-protected
-  def authorize
-    unless AdminLogin.find_by_id(session[:login_user])
-      redirect_to login_url, :alert=>"Please login"
-    end
-  end
-  
+    
 end
