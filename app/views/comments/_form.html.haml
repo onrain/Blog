@@ -8,20 +8,33 @@
     %button{:class=>"close", :"data-dismiss"=>:"alert"}
       ×
     =flash[:alert]
-  
+
 = form_for @comment do |f|
-  .well
-    = hello_lepra(current_user.name)
-    %h4
-    #curent_email
-      -
-      = current_user.email
+  - if session[:user_id] 
+    .well
+      = hello_lepra(current_user.name)
+      %h4
+        #curent_email
+          = current_user.email
     
-  = f.hidden_field :username, :value=>current_user.name 
-  = f.hidden_field :email, :value=>current_user.email
-  = f.hidden_field :post_id, :value=>params[:id]
-  = f.hidden_field :admin_id, :value=>params[:id]
-  
+    = f.hidden_field :username, :value=>current_user.name 
+    = f.hidden_field :email, :value=>current_user.email
+    = f.hidden_field :post_id, :value=>params[:id]
+    = f.hidden_field :admin_id, :value=>params[:id]
+    
+  - else
+    .well
+      = hello_lepra("Admin =)")
+      %h4
+      #curent_email
+        = current_admin_auth.email
+    
+    = f.hidden_field :username, :value=>"Admin"
+    = f.hidden_field :email, :value=>current_admin_auth.email
+    = f.hidden_field :post_id, :value=>params[:id]
+    = f.hidden_field :admin_id, :value=>params[:id]
+    
+    
   .field
     = f.text_area :comment_content, id:"comment_area"
   .actions

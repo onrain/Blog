@@ -4,7 +4,7 @@
     %p
       = @articles.title
     %p
-      = image_tag @articles.image.url(:medium), id:"show_img", class:"thumbnail" if @articles.image?
+      = image_tag @articles.image.url(:medium), id:"show_img", alt:@articles.title, title:@articles.title, class:"thumbnail" if @articles.image?
     %p
       = raw @articles.article_content
     %p
@@ -14,7 +14,7 @@
     %hr
 
   #comments_d
-    - unless session[:user_id].nil?
+    - if session[:user_id] or admin_auth_signed_in?
       =render 'form'
     - else
       %h3
@@ -24,11 +24,11 @@
     #comment_box
       - @comments_q.each do |comment|
         %p
-          %b Username
+          %b Автор комментария:
           = comment.username
         %p
-          %b Email
-          = comment.email
+          %b Почта:
+          = admin_email(comment.email)
         %p
           = set_time comment.data_p
         %p

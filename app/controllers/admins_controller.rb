@@ -10,7 +10,7 @@ class AdminsController < ApplicationController
     else
       limit = params[:l]
     end
-    @last_articles = Post.limit(limit)
+    @last_articles = Post.limit(limit).where(published:1)
   end
   
   def show

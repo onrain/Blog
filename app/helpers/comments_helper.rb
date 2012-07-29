@@ -3,7 +3,7 @@ module CommentsHelper
   
   def hello_lepra(username)
     username = username.to_s
-    hello = [
+    @hello = [
     'An nescis, mi fili, quantilla sapientia mundus regatur?',
     'Who in the world has Chinese food for breakfast? The Chinese?',
     username+', '+username+'...',
@@ -83,11 +83,22 @@ module CommentsHelper
     'Шоколад ни в чем не виноват, '+username+'.',
     'Я видел «17 мгновений весны» на китайском, '+username+'.',
     'Я слежу за тобой, '+username+'. И ты мне нравишься. (NOT GAY)',
-    '— Алло это прачечная? — Упячечная, '+username+'.',
-    'Элсо, '+username+' — так пишет только конченная вендупсня, $username.'
+    '— Алло это прачечная? — Упячечная, '+username+'.'
   ]
-    l = rand(hello.size)
-    hello[l]
+    l = rand(@hello.size)
+    @hello[l]
+  end
+  
+  def admin_email(email)
+    if email =~ /admin/
+      if session[:user_id]
+        self.hello_lepra(current_user.name)
+      else
+        self.hello_lepra("Admin")
+      end
+    else
+      email
+    end
   end
   
 end

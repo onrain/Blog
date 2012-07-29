@@ -50,24 +50,127 @@
   </div>
 </body>
 <div id='admin_panel'></div>
-<script src="/assets/comments.js?body=1" type="text/javascript"></script>
-<div class='articles'>
-  <div id='article'>
-    <img alt="Hello" class="thumbnail" id="image_b" src="/system/posts/images/32/medium/duck_web.jpg?1343569930" title="Hello" />
-    <a href="/article/32" id="title_l">Hello</a>
+<div class='article_show'>
+  <div id='back_url'>Back</div>
+  <div id='art_div'>
+    <p>
+      Hello
+    </p>
+    <p>
+      <img alt="Hello" class="thumbnail" id="show_img" src="/system/posts/images/32/medium/duck_web.jpg?1343569930" title="Hello" />
+    </p>
     <p>
       lolo<br>
     </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      July 29, 2012  AT 13:52
-    </div>
     <p>
-      <a href="/article/32" id="more">Read more...</a>
+      Date create:
+      <i>
+        July 29, 2012  AT 13:52
+      </i>
     </p>
     <hr>
   </div>
+  <div id='comments_d'>
+    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="X0wRqx4QXiDphiOs0DYef4iFb9+UyHMYP3GX9G5C8Vk=" /></div>
+  <div class='well'>
+    Носороги не играют в игры, Sergey Slavin.
+    <h4>
+      <div id='curent_email'>
+        pankpeople@yandex.ru
+      </div>
+    </h4>
+  </div>
+  <input id="comment_username" name="comment[username]" type="hidden" value="Sergey Slavin" />
+  <input id="comment_email" name="comment[email]" type="hidden" value="pankpeople@yandex.ru" />
+  <input id="comment_post_id" name="comment[post_id]" type="hidden" value="32" />
+  <input id="comment_admin_id" name="comment[admin_id]" type="hidden" value="32" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
 </div>
-<br>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
+    <hr>
+    <div id='comment_box'>
+      <p>
+        <b>Автор комментария:</b>
+        Sergey Slavin
+      </p>
+      <p>
+        <b>Почта:</b>
+        pankpeople@yandex.ru
+      </p>
+      <p>
+        July 29, 2012  AT 14:22
+      </p>
+      <p>
+        cooll
+      </p>
+      <hr>
+      <p>
+        <b>Автор комментария:</b>
+        Sergey Slavin
+      </p>
+      <p>
+        <b>Почта:</b>
+        pankpeople@yandex.ru
+      </p>
+      <p>
+        July 29, 2012  AT 14:21
+      </p>
+      <p>
+        крутая штука)
+      </p>
+      <hr>
+      <p>
+        <b>Автор комментария:</b>
+        Admin
+      </p>
+      <p>
+        <b>Почта:</b>
+        Патрис Лумумба родился 2 июля, Sergey Slavin!
+      </p>
+      <p>
+        July 29, 2012  AT 14:18
+      </p>
+      <p>
+        2222
+      </p>
+      <hr>
+      <p>
+        <b>Автор комментария:</b>
+        Admin
+      </p>
+      <p>
+        <b>Почта:</b>
+        запостил@dmin.com
+      </p>
+      <p>
+        July 29, 2012  AT 14:13
+      </p>
+      <p>
+        asd
+      </p>
+      <hr>
+      <p>
+        <b>Автор комментария:</b>
+        Admin
+      </p>
+      <p>
+        <b>Почта:</b>
+        Solutions are not the answer, Sergey Slavin.
+      </p>
+      <p>
+        July 29, 2012  AT 14:12
+      </p>
+      <p>
+        круто)
+      </p>
+      <hr>
+    </div>
+  </div>
+  
+</div>
 <div id='footer'></div>

@@ -2,7 +2,7 @@
 .articles
   - @articles.each do |art|
     #article
-      = image_tag art.image.url(:medium), :id=>"image_b", class:"thumbnail" if art.image?
+      = image_tag art.image.url(:medium), alt:art.title, title:art.title, :id=>"image_b", class:"thumbnail" if art.image?
       = link_to art.title, article_path(art), id:"title_l"
       %p
         = art.article_description.html_safe

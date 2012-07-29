@@ -35,17 +35,13 @@
   <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
   <script src="/assets/application.js?body=1" type="text/javascript"></script>
   <meta content="authenticity_token" name="csrf-param" />
-  <meta content="hUPTsgOYkHnvZNox8GmE7577VsDdouVexHKUtrkyJzY=" name="csrf-token" />
+  <meta content="X0wRqx4QXiDphiOs0DYef4iFb9+UyHMYP3GX9G5C8Vk=" name="csrf-token" />
 </head>
 <body>
   <div id='header'>
     <a href="/home" id="main-label">Orange Blog</a>
     <div id='face_book_f'>
-      Signed in as
-      <strong id='username'>
-        Sergey Slavin
-      </strong>
-      <a href="/signout" id="sign_out">Sign out</a>
+      <a href="/auth/facebook" id="sign_in">Sign in with Facebook</a>
     </div>
   </div>
 </body>
@@ -57,7 +53,7 @@
       lol
     </p>
     <p>
-      
+      <img alt="lol" class="thumbnail" id="show_img" src="/system/posts/images/000/000/028/medium/83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1343569497" title="lol" />
     </p>
     <p>
       <br>
@@ -65,32 +61,16 @@
     <p>
       Date create:
       <i>
-        
+        July 29, 2012  AT 16:36
       </i>
     </p>
     <hr>
   </div>
   <div id='comments_d'>
-    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="hUPTsgOYkHnvZNox8GmE7577VsDdouVexHKUtrkyJzY=" /></div>
-  <div class='well'>
-    Элсо, Sergey Slavin — так пишет только конченная вендупсня, $username.
-    <h4></h4>
-    <div id='curent_email'>
-    pankpeople@yandex.ru
-  </div>
-</div>
-<input id="comment_username" name="comment[username]" type="hidden" value="Sergey Slavin" />
-<input id="comment_email" name="comment[email]" type="hidden" value="pankpeople@yandex.ru" />
-<input id="comment_post_id" name="comment[post_id]" type="hidden" value="28" />
-<input id="comment_admin_id" name="comment[admin_id]" type="hidden" value="28" />
-<div class='field'>
-  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
-</textarea>
-</div>
-<div class='actions'>
-  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
-</div>
-</form>
+    <h3>
+      Please login:
+      <a href="/auth/facebook" id="sign_in_art"><img alt="Facebook_logo2" height="50" src="/assets/facebook_logo2.png" width="50" /></a>
+    </h3>
     <hr>
     <div id='comment_box'>
       <p>
@@ -105,7 +85,7 @@
         July 27, 2012  AT 12:55
       </p>
       <p>
-        sdff
+        lolqqqq
       </p>
       <hr>
     </div>
