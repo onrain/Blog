@@ -40,6 +40,8 @@
       = f.text_area :article_content, id:"textarea_form", :class => 'text_area', rows:10
   .control-group
     .controls
+      %div
+        = image_tag @post.image.url(:medium), class:"thumbnail" if @post.image?
       =f.file_field :image
   .form-actions
     = f.submit nil, :class => 'btn btn-primary'

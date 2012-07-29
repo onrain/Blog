@@ -6,9 +6,9 @@ class Post < ActiveRecord::Base
     :styles => {
       :small => {:geometry => "70x70>"}, 
       :medium => {:geometry => "250x250>"},
-      :hard => {:geometry => "300x300>"} 
+      :hard => {:geometry => "500x500>"} 
       },
-  :url => '/system/:class/:attachment/:id/:style/:filename'
+  :url => "/system/:class/:attachment/:id/:style_:basename.:extension"
 
   validates_attachment_size :image, :less_than => 1.megabytes  
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png','image/jpg']  

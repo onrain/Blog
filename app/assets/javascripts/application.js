@@ -17,3 +17,4 @@
 //= require_tree .
 //= require bootstrap
 //= require jquery-ui-timepicker-addon
+//= require fancybox

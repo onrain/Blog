@@ -27,3 +27,5 @@ gem 'rspec-rails'
 gem 'jquery_datepicker'
 
 gem 'devise'
+
+gem 'fancybox-rails'
