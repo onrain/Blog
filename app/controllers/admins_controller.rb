@@ -1,4 +1,6 @@
 class AdminsController < ApplicationController
+  
+  before_filter :authenticate_admin_auth!
  
   respond_to :html, :json, :xml
   
