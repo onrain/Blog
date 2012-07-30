@@ -3,3 +3,6 @@
 #nav-bar{ padding-top:40px; }
 .login{ position: relative; top: 50px; left:10px; }
 .alert_mess{position: relative; top: 30px; left:10px; width:400px;}
+#sort_field th:hover{ text-decoration: underline; cursor:pointer; }
+.up_sort{ background: url('up.png') no-repeat left; }
+.down_sort{ background: url('down.png') no-repeat left; }

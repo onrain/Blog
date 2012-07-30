@@ -6,4 +6,6 @@ class Comment < ActiveRecord::Base
                     :length => {:minimum => 6, :maximum => 254},
                     :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
                     
+  scope :show_comment, lambda{|id| where(post_id:id).order("data_p desc") unless id.nil? }
+                    
 end

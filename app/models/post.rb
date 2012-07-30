@@ -11,5 +11,11 @@ class Post < ActiveRecord::Base
   :url => "/system/:class/:attachment/:id/:style_:basename.:extension"
 
   validates_attachment_size :image, :less_than => 1.megabytes  
-  validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png','image/jpg']  
+  validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png','image/jpg']
+  
+  
+  scope :published, where(published:1)
+  scope :nopublished, where(published:0)
+  
+  
 end

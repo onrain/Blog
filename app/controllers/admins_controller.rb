@@ -10,7 +10,7 @@ class AdminsController < ApplicationController
     else
       limit = params[:l]
     end
-    @last_articles = Post.limit(limit).where(published:1)
+    @last_articles = Post.limit(limit).published
   end
   
   def show
@@ -24,13 +24,13 @@ class AdminsController < ApplicationController
   end
   
   def published
-    @posts_p = Post.where(:published => 1).paginate page: params[:page], order: 'published desc', per_page: 10
+    @posts_p = Post.published.paginate page: params[:page], order: 'published desc', per_page: 10
     respond_with @posts_p
   end
 
   
   def npublished
-    @posts_no_p = Post.where(:published => 0).paginate page: params[:page], order: 'published desc', per_page: 10
+    @posts_no_p = Post.nopublished.paginate page: params[:page], order: 'published desc', per_page: 10
     respond_with @posts_no_p
   end
 

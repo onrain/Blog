@@ -5,14 +5,14 @@ class CommentsController < ApplicationController
   respond_to :html, :json, :xml
   
   def index    
-    @articles = Post.where(:published => 1).paginate page: params[:page], order: 'date_create desc', per_page: 10
+    @articles = Post.published.paginate page: params[:page], order: 'date_create desc', per_page: 10
     respond_with @articles
   end
 
 
   def show
     @articles = Post.find(params[:id])
-    @comments_q = Comment.find_all_by_post_id(params[:id], :order => "data_p desc").paginate page: params[:page], order: 'data_p desc', per_page: 5
+    @comments_q = Comment.show_comment(params[:id]).paginate page: params[:page], order: 'data_p desc', per_page: 5
     @comment = Comment.new
     respond_with @articles
   end
