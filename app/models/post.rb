@@ -16,6 +16,7 @@ class Post < ActiveRecord::Base
   
   scope :published, where(published:1)
   scope :nopublished, where(published:0)
+  scope :ordering, lambda{|f| order("#{f} desc") unless f.nil? }
   
   
 end

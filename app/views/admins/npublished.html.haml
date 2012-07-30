@@ -4,14 +4,14 @@
     %h1 No published articles
     %table.table.table-striped
       %thead
-        %tr
-          %th id
-          %th image
-          %th title
-          %th published
-          %th created
-          %th article description
-          %th article content
+        %tr#sort_field
+          %th{id:"aid", class:"sort"} id
+          %th{id:"aimg"} image
+          %th{id:"atitle", class:"sort"} title
+          %th{id:"apub", class:"sort"} published
+          %th{id:"acreate", class:"sort"} created
+          %th{id:"adesc", class:"sort"} article description
+          %th{id:"acont", class:"sort"} article content
           %th=t '.actions', :default => t("helpers.actions")
       %tbody
         - @posts_no_p.each do |post|

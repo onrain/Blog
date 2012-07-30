@@ -28,13 +28,13 @@
     %table.table.table-striped
       %thead
         %tr#sort_field
-          %th{id:"aid"} id
+          %th{id:"aid", class:"sort"} id
           %th{id:"aimg"} image
-          %th{id:"atitle"} title
-          %th{id:"apub"} published
-          %th{id:"acreate"} created
-          %th{id:"adesc"} article description
-          %th{id:"acont"} article content
+          %th{id:"atitle", class:"sort"} title
+          %th{id:"apub", class:"sort"} published
+          %th{id:"acreate", class:"sort"} created
+          %th{id:"adesc", class:"sort"} article description
+          %th{id:"acont", class:"sort"} article content
           %th=t '.actions', :default => t("helpers.actions")
       %tbody
         - @last_articles.each do |post|

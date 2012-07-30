@@ -15,33 +15,20 @@ $(document).ready ->
     $(this).removeClass('field_with_errors')
   
 
-  $('#sort_field th').addClass('up_sort')
-  
-  
-  $('#sort_field th').click ->
-
-    $('#sort_field th').removeClass('down_sort')
+  $('#sort_field th[class*="sort"]').addClass('up_sort')
    
-    $(this).toggleClass('down_sort')
-    
-    
-    #$(this).toggleClass("down_sort")
-    
-    #down_class = $('#sort_field th[class*="down_sort"]')
-    #dclass = down_class.attr("class")
-    
-    #alert dclass
-    #alert $(this).attr("class")
-    
-    
-    
-    #if $(this).attr("class") is dclass  
-      #$(this).toggleClass("down_sort")
-    #else
-      #down_class.removeAttr("class")
-      #down_class.addClass("up_sort")
-
   
+  path = document.location.href
+  pos = path.indexOf("=")
+  method = path.substring(pos-1, pos)
+  if method is "q"
+    id = path.substring(pos+1)
+    $('#'+id).addClass('down_sort')
+  
+  $('#sort_field th.sort').click ->   
+    id = $(this).attr("id")
+    location.href = "?q="+id
+ 
   
   
   

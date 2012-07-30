@@ -10,27 +10,29 @@ class AdminsController < ApplicationController
     else
       limit = params[:l]
     end
-    @last_articles = Post.limit(limit).published
+    sort = sort_param(params[:q]) unless params[:q].blank?  
+    @last_articles = Post.limit(limit).published.ordering(sort)
   end
   
   def show
     @post = Post.find(params[:id])
     respond_with @post
   end
-  
   def comments
     @comment = Comment.paginate page: params[:page], order: 'data_p desc', per_page: 10
     respond_with @comment
   end
   
   def published
-    @posts_p = Post.published.paginate page: params[:page], order: 'published desc', per_page: 10
+    sort = sort_param(params[:q]) unless params[:q].blank?
+    @posts_p = Post.published.ordering(sort).paginate page: params[:page], order: 'published desc', per_page: 10
     respond_with @posts_p
   end
 
   
   def npublished
-    @posts_no_p = Post.nopublished.paginate page: params[:page], order: 'published desc', per_page: 10
+    sort = sort_param(params[:q]) unless params[:q].blank?
+    @posts_no_p = Post.nopublished.ordering(sort).paginate page: params[:page], order: 'published desc', per_page: 10
     respond_with @posts_no_p
   end
 
@@ -76,6 +78,28 @@ class AdminsController < ApplicationController
     @comment.update_attributes(params[:comment])
     flash[:notice] = "Comment Update success!"
     redirect_to admins_comments_path
+  end
+  
+private
+  def sort_param(q)
+    case q
+    when "aid"
+      sort = "id"
+    when "aimg"
+      sort = "image"
+    when "atitle"
+      sort = "title"
+    when "apub"
+      sort = "published"
+    when "acreate"
+      sort = "date_create"
+    when "adesc"
+      sort = "article_description"
+    when "acont"
+      sort = "article_content"
+    else
+      sort = "id"
+    end
   end
     
 end
