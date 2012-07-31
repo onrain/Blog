@@ -2,14 +2,24 @@ $(document).ready ->
   
   path = window.location.pathname
   
-  if path is "/admins/post/new"
-    $('#new_art').addClass('active')
-  if path is "/admins/comments"
-    $('#comments').addClass('active')
-  if path is "/admins/post/published"
-    $('#pub_art').addClass('active')
-  if path is "/admins/post/npublished"
-    $('#n_pub_art').addClass('active')
+  
+  switch path
+    when "/admins/post/new" then $('#new_art').addClass('active')
+    when "/admins/comments" then $('#comments').addClass('active')
+    when "/admins/post/published" then $('#pub_art').addClass('active')
+    when "/admins/post/npublished" then $('#n_pub_art').addClass('active')
+    when "/admins/search" then $('#search').addClass('active')
+  
+  #if path is "/admins/post/new"
+  #  $('#new_art').addClass('active')
+  #if path is "/admins/comments"
+  #  $('#comments').addClass('active')
+  #if path is "/admins/post/published"
+  #  $('#pub_art').addClass('active')
+  #if path is "/admins/post/npublished"
+  #  $('#n_pub_art').addClass('active')
+  #if path is "/admins/post/npublished"
+  #  $('#n_pub_art').addClass('active')
     
   $('.field_with_errors').click ->
     $(this).removeClass('field_with_errors')
@@ -21,13 +31,13 @@ $(document).ready ->
   path = document.location.href
   pos = path.indexOf("=")
   method = path.substring(pos-1, pos)
-  if method is "q"
+  if method is "s"
     id = path.substring(pos+1)
     $('#'+id).addClass('down_sort')
   
   $('#sort_field th.sort').click ->   
     id = $(this).attr("id")
-    location.href = "?q="+id
+    location.href = "?s="+id
  
   
   

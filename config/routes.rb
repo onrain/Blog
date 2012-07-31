@@ -12,10 +12,10 @@ OrangeBlog::Application.routes.draw do
   end
   
   
-  controller :admins do
-    get "admins/edit/comment/:id" => :edit_comment
-    post "admins/update/comment/:id" => :update_comment
-  end
+
+  match "admins/edit/comment/:id" => "admins#edit_comment"
+  match "admins/update/comment/:id" => "admins#update_comment"
+  match "admins/search", to: "admins#search"
   
   match "admins/update/comment/:id" => "admins#update_comment"
   match "admins/edit/comment/:id" => "admins#edit_comment"

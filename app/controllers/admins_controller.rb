@@ -10,7 +10,7 @@ class AdminsController < ApplicationController
     else
       limit = params[:l]
     end
-    sort = sort_param(params[:q]) unless params[:q].blank?  
+    sort = sort_param(params[:s]) unless params[:s].blank?  
     @last_articles = Post.limit(limit).published.ordering(sort)
   end
   
@@ -24,15 +24,15 @@ class AdminsController < ApplicationController
   end
   
   def published
-    sort = sort_param(params[:q]) unless params[:q].blank?
-    @posts_p = Post.published.ordering(sort).paginate page: params[:page], order: 'published desc', per_page: 10
+    sort = sort_param(params[:s]) unless params[:s].blank?
+    @posts_p = Post.published.ordering(sort).paginate page: params[:page], order: 'date_create desc', per_page: 10
     respond_with @posts_p
   end
 
   
   def npublished
-    sort = sort_param(params[:q]) unless params[:q].blank?
-    @posts_no_p = Post.nopublished.ordering(sort).paginate page: params[:page], order: 'published desc', per_page: 10
+    sort = sort_param(params[:s]) unless params[:s].blank?
+    @posts_no_p = Post.nopublished.ordering(sort).paginate page: params[:page], order: 'date_create desc', per_page: 10
     respond_with @posts_no_p
   end
 
@@ -80,9 +80,19 @@ class AdminsController < ApplicationController
     redirect_to admins_comments_path
   end
   
+  def search
+      
+    begin   
+      @search = Post.search(params[:q]).paginate page: params[:page], order: 'date_create desc', per_page: 10
+    rescue
+      @search = []
+    end
+    
+  end
+  
 private
-  def sort_param(q)
-    case q
+  def sort_param(s)
+    case s
     when "aid"
       sort = "id"
     when "aimg"

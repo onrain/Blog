@@ -39,7 +39,7 @@
   <script src="/assets/fancybox.js?body=1" type="text/javascript"></script>
   <script src="/assets/application.js?body=1" type="text/javascript"></script>
   <meta content="authenticity_token" name="csrf-param" />
-  <meta content="yXT3rb5FR5nTA65vyovee/QQoAe07WOSUBfugfrV4aU=" name="csrf-token" />
+  <meta content="s7u38bemJm/4Jd/WPSK4gBN3zLzTtx1M6LbxzGZyUb4=" name="csrf-token" />
 </head>
 <body>
   <div id='header'>
@@ -50,56 +50,51 @@
   </div>
 </body>
 <div id='admin_panel'></div>
-<script src="/assets/comments.js?body=1" type="text/javascript"></script>
-<div class='articles'>
-  <div id='article'>
-    <a href="/system/posts/images/38/hard_250px-Friends_titles.jpg?1343579541" class="fancybox "><img alt="ASDASDASD" class="thumbnail" id="image_b" src="/system/posts/images/38/medium_250px-Friends_titles.jpg?1343579541" title="ASDASDASD" /></a>
-    <a href="/article/38" id="title_l">ASDASDASD</a>
+<div class='article_show'>
+  <div id='back_url'>Back</div>
+  <div id='art_div'>
+    <p>
+      asdasdasd
+    </p>
+    <p>
+      <img alt="asdasdasd" class="thumbnail" id="show_img" src="/system/posts/images/36/medium_83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1343579447" title="asdasdasd" />
+    </p>
     <p>
       <br>
     </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      July 29, 2012  AT 16:32
-    </div>
     <p>
-      <a href="/article/38" id="more">Read more...</a>
+      Date create:
+      <i>
+        July 29, 2012  AT 16:30
+      </i>
     </p>
     <hr>
   </div>
-  <div id='article'>
-    <a href="/system/posts/images/37/hard_duck_web.jpg?1343579500" class="fancybox "><img alt="ASAsAS" class="thumbnail" id="image_b" src="/system/posts/images/37/medium_duck_web.jpg?1343579500" title="ASAsAS" /></a>
-    <a href="/article/37" id="title_l">ASAsAS</a>
-    <p>
-      AsASAsAS<br>
-    </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      July 29, 2012  AT 16:31
+  <div id='comments_d'>
+    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="s7u38bemJm/4Jd/WPSK4gBN3zLzTtx1M6LbxzGZyUb4=" /></div>
+  <div class='well'>
+    Сегодня вас ждёт приятная неожиданность, Admin =)!
+    <h4></h4>
+    <div id='curent_email'>
+      admin@admin.com
     </div>
-    <p>
-      <a href="/article/37" id="more">Read more...</a>
-    </p>
-    <hr>
   </div>
-  <div id='article'>
-    <a href="/system/posts/images/36/hard_83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1343579447" class="fancybox "><img alt="asdasdasd" class="thumbnail" id="image_b" src="/system/posts/images/36/medium_83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1343579447" title="asdasdasd" /></a>
-    <a href="/article/36" id="title_l">asdasdasd</a>
-    <p>
-      lol<br>
-    </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      July 29, 2012  AT 16:30
-    </div>
-    <p>
-      <a href="/article/36" id="more">Read more...</a>
-    </p>
-    <hr>
-  </div>
+  <input id="comment_username" name="comment[username]" type="hidden" value="Admin" />
+  <input id="comment_email" name="comment[email]" type="hidden" value="admin@admin.com" />
+  <input id="comment_post_id" name="comment[post_id]" type="hidden" value="36" />
+  <input id="comment_admin_id" name="comment[admin_id]" type="hidden" value="36" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
 </div>
-<br>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
+    <hr>
+    <div id='comment_box'>
+    </div>
+  </div>
+  
+</div>
 <div id='footer'></div>

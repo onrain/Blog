@@ -11,8 +11,10 @@
 
 =render 'nav'
 
+%p
+  = render 'search'
 
-    
+
 -unless @last_articles.empty?
   .pub_art
     %h1 Last published articles
