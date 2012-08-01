@@ -20,7 +20,6 @@
     = f.hidden_field :username, :value=>current_user.name 
     = f.hidden_field :email, :value=>current_user.email
     = f.hidden_field :post_id, :value=>params[:id]
-    = f.hidden_field :admin_id, :value=>params[:id]
     
   - else
     .well
@@ -32,7 +31,6 @@
     = f.hidden_field :username, :value=>"Admin"
     = f.hidden_field :email, :value=>current_admin_auth.email
     = f.hidden_field :post_id, :value=>params[:id]
-    = f.hidden_field :admin_id, :value=>params[:id]
     
     
   .field

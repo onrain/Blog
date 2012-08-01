@@ -65,27 +65,71 @@
   </div>
 </body>
 <div id='admin_panel'></div>
-<script src="/assets/comments.js?body=1" type="text/javascript"></script>
-<div class='articles'>
-  <div id='article'>
-    
-    <a href="/article/121" id="title_l">asasd</a>
+<div class='article_show'>
+  <div id='art_div'>
+    <p>
+      ASDASDASD
+    </p>
+    <p>
+      
+    </p>
     <p>
       <br>
     </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      August 01, 2012  AT 21:28
-    </div>
     <p>
-      <a href="/article/121" id="more">Read more...</a>
+      Date create:
+      <i>
+        August 02, 2012  AT 00:36
+      </i>
     </p>
     <hr>
   </div>
+  <div id='comments_d'>
+    <div class='alert alert-success'>
+  <button class='close' data-dismiss='alert'>
+    ×
+  </button>
+  Comment was successfully created.
 </div>
-<br>
-<div style='margin-left:70px;'>
+<form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="fM8habSL++T3qjZVOVDY69Q4Mw+4Y75PlQDDA68wxCw=" /></div>
+  <div class='well'>
+    Sergey Slavin, Sergey Slavin...
+    <h4>
+      <div id='curent_email'>
+        pankpeople@yandex.ru
+      </div>
+    </h4>
+  </div>
+  <input id="comment_username" name="comment[username]" type="hidden" value="Sergey Slavin" />
+  <input id="comment_email" name="comment[email]" type="hidden" value="pankpeople@yandex.ru" />
+  <input id="comment_post_id" name="comment[post_id]" type="hidden" value="122" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
+</div>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
+    <hr>
+    <div id='comment_box'>
+      <p>
+        <b>Автор комментария:</b>
+        Sergey Slavin
+      </p>
+      <p>
+        <b>Почта:</b>
+        pankpeople@yandex.ru
+      </p>
+      <p>
+        August 02, 2012  AT 00:36
+      </p>
+      <p>
+        lolol
+      </p>
+      <hr>
+    </div>
+  </div>
   
 </div>
 <div id='footer'></div>

@@ -8,7 +8,8 @@ namespace :go do
      published: "1",
      title: "title"*3,
      image_file_name:"duck_web.jpg",
-     image_content_type:"image/jpeg"
+     image_content_type:"image/jpeg",
+     image_file_size:"18882"
    }
    i=0
    while(i<30) do
