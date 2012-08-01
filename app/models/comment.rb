@@ -7,5 +7,9 @@ class Comment < ActiveRecord::Base
                     :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
                     
   scope :show_comment, lambda{|id| where(post_id:id).order("data_p desc") unless id.nil? }
+  scope :search, lambda{ |q|
+    q = "%" + q + "%"
+    find(:all, :conditions => ['title LIKE ? OR article_content LIKE ? OR article_description LIKE ?', q, q, q])   
+  }
                     
 end

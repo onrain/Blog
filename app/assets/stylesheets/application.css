@@ -13,13 +13,13 @@
  *= require jquery-ui-timepicker-addon
  *= require fancybox
  */
-
+*{margin:0 auto;}
 #textarea_form{ width: 400px; }
 html { background-color: #33CCFF; margin-top:12px; max-width: 1600px;}
 #footer { background-image: url(bg-m.png); width: 1505px; height: 90px; display: table; margin: 0 auto;}
 #admin_label a:hover { color: #33CCFF; }
 #new_btn{ width:60px; margin-left: 40px; }
-#header{ background: #FF6600; width: 100%; height: 30px; position: fixed; top:0px; z-index: 1; }
+#header{ background: #FF6600; width: 1600px; height: 30px; position: fixed; top:0px; z-index: 1; }
 #sign_in{ position:inherit; top: -2px; color: white; font-size: 17px;}
 #main-label{ color:white; font-size: 20px; font-weight: bold; display: inline; position: relative; top:3px; }
 #face_book_f{ position: relative; font-size: 15px; font-weight: bold; top:-15px; left:170px; color: #336699;}

@@ -16,7 +16,6 @@ OrangeBlog::Application.routes.draw do
   match "admins/edit/comment/:id" => "admins#edit_comment"
   match "admins/update/comment/:id" => "admins#update_comment"
   match "admins/search", to: "admins#search"
-  
   match "admins/update/comment/:id" => "admins#update_comment"
   match "admins/edit/comment/:id" => "admins#edit_comment"
   match "admins/post/new" => "admins#new"
@@ -32,6 +31,9 @@ OrangeBlog::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
   
   match "article/:id" => "comments#show"
+  
+  
+  match "/search", to: "comments#search"
   
   match "home" => "comments#index"
   

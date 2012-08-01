@@ -37,9 +37,13 @@
   <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
   <script src="/assets/jquery.fancybox.js?body=1" type="text/javascript"></script>
   <script src="/assets/fancybox.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.core.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.widget.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.mouse.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.draggable.js?body=1" type="text/javascript"></script>
   <script src="/assets/application.js?body=1" type="text/javascript"></script>
   <meta content="authenticity_token" name="csrf-param" />
-  <meta content="X9ST02KrdBU2qgZ1yv9B38zBwjGezsQ8J8/cuSBA+/M=" name="csrf-token" />
+  <meta content="VOrrifVkFqpc4yK6HFFbNi6aD4AWZVdSjnNjqMrjoeE=" name="csrf-token" />
 </head>
 <body>
   <div id='header'>
@@ -51,7 +55,6 @@
 </body>
 <div id='admin_panel'></div>
 <div class='article_show'>
-  <div id='back_url'>Back</div>
   <div id='art_div'>
     <p>
       ASAsAS
@@ -69,28 +72,13 @@
       </i>
     </p>
     <hr>
+    <div class='btn btn-info' id='back_url'>Back</div>
   </div>
   <div id='comments_d'>
-    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="X9ST02KrdBU2qgZ1yv9B38zBwjGezsQ8J8/cuSBA+/M=" /></div>
-  <div class='well'>
-    Шоколад ни в чем не виноват, Admin =).
-    <h4></h4>
-    <div id='curent_email'>
-      admin@admin.com
-    </div>
-  </div>
-  <input id="comment_username" name="comment[username]" type="hidden" value="Admin" />
-  <input id="comment_email" name="comment[email]" type="hidden" value="admin@admin.com" />
-  <input id="comment_post_id" name="comment[post_id]" type="hidden" value="37" />
-  <input id="comment_admin_id" name="comment[admin_id]" type="hidden" value="37" />
-<div class='field'>
-  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
-</textarea>
-</div>
-<div class='actions'>
-  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
-</div>
-</form>
+    <h3>
+      Please login:
+      <a href="/auth/facebook" id="sign_in_art"><img alt="Facebook_logo2" height="50" src="/assets/facebook_logo2.png" width="50" /></a>
+    </h3>
     <hr>
     <div id='comment_box'>
     </div>

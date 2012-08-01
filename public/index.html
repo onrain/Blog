@@ -37,20 +37,34 @@
   <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
   <script src="/assets/jquery.fancybox.js?body=1" type="text/javascript"></script>
   <script src="/assets/fancybox.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.core.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.widget.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.mouse.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.draggable.js?body=1" type="text/javascript"></script>
   <script src="/assets/application.js?body=1" type="text/javascript"></script>
   <meta content="authenticity_token" name="csrf-param" />
-  <meta content="yXT3rb5FR5nTA65vyovee/QQoAe07WOSUBfugfrV4aU=" name="csrf-token" />
+  <meta content="VOrrifVkFqpc4yK6HFFbNi6aD4AWZVdSjnNjqMrjoeE=" name="csrf-token" />
 </head>
 <body>
   <div id='header'>
     <a href="/home" id="main-label">Orange Blog</a>
     <div id='face_book_f'>
-      <a href="/auth/facebook" id="sign_in">Sign in with Facebook</a>
+      Signed in as
+      <strong id='username'>
+        Sergey Slavin
+      </strong>
+      <a href="/signout" id="sign_out">Sign out</a>
     </div>
   </div>
 </body>
 <div id='admin_panel'></div>
 <script src="/assets/comments.js?body=1" type="text/javascript"></script>
+<div class='search'>
+  <form accept-charset="UTF-8" action="/search" class="form-search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <input id="q" name="q" type="text" />
+    <input class="btn btn-primary" name="commit" size="40" type="submit" value="Search" />
+  </form>
+</div>
 <div class='articles'>
   <div id='article'>
     <a href="/system/posts/images/38/hard_250px-Friends_titles.jpg?1343579541" class="fancybox "><img alt="ASDASDASD" class="thumbnail" id="image_b" src="/system/posts/images/38/medium_250px-Friends_titles.jpg?1343579541" title="ASDASDASD" /></a>

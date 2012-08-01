@@ -1,5 +1,4 @@
 .article_show
-  #back_url Back
   #art_div
     %p
       = @articles.title
@@ -12,7 +11,6 @@
       %i
         = set_time @articles.date_create
     %hr
-
   #comments_d
     - if session[:user_id] or admin_auth_signed_in?
       =render 'form'
