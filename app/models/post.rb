@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
   scope :ordering, lambda{|f| order("#{f} desc") unless f.nil? }
   scope :search, lambda{ |q|
     q = "%" + q + "%"
-    find(:all, :conditions => ['title LIKE ? OR article_content LIKE ? OR article_description LIKE ?', q, q, q])   
+    find(:all, :conditions => ['title LIKE ? OR article_content LIKE ? OR article_description LIKE ?', q, q, q])
   }
   
 end

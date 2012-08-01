@@ -49,7 +49,11 @@
   <div id='header'>
     <a href="/home" id="main-label">Orange Blog</a>
     <div id='face_book_f'>
-      <a href="/auth/facebook" id="sign_in">Sign in with Facebook</a>
+      Signed in as
+      <strong id='username'>
+        Sergey Slavin
+      </strong>
+      <a href="/signout" id="sign_out">Sign out</a>
     </div>
   </div>
 </body>
@@ -72,13 +76,29 @@
       </i>
     </p>
     <hr>
-    <div class='btn btn-info' id='back_url'>Back</div>
   </div>
   <div id='comments_d'>
-    <h3>
-      Please login:
-      <a href="/auth/facebook" id="sign_in_art"><img alt="Facebook_logo2" height="50" src="/assets/facebook_logo2.png" width="50" /></a>
-    </h3>
+    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="VOrrifVkFqpc4yK6HFFbNi6aD4AWZVdSjnNjqMrjoeE=" /></div>
+  <div class='well'>
+    Sergey Slavin, Sergey Slavin...
+    <h4>
+      <div id='curent_email'>
+        pankpeople@yandex.ru
+      </div>
+    </h4>
+  </div>
+  <input id="comment_username" name="comment[username]" type="hidden" value="Sergey Slavin" />
+  <input id="comment_email" name="comment[email]" type="hidden" value="pankpeople@yandex.ru" />
+  <input id="comment_post_id" name="comment[post_id]" type="hidden" value="36" />
+  <input id="comment_admin_id" name="comment[admin_id]" type="hidden" value="36" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
+</div>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
     <hr>
     <div id='comment_box'>
     </div>

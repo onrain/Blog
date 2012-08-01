@@ -34,9 +34,9 @@ class CommentsController < ApplicationController
   end
   
   def search
-    begin   
+    unless params[:q].blank?   
       @search = Post.search(params[:q].strip).paginate page: params[:page], order: 'date_create desc', per_page: 10
-    rescue
+    else
       @search = []
     end
   end

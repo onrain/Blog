@@ -80,11 +80,10 @@ class AdminsController < ApplicationController
     redirect_to admins_comments_path
   end
   
-  def search
-      
-    begin   
+  def search 
+    unless params[:q].blank?    
       @search = Post.search(params[:q].strip).paginate page: params[:page], order: 'date_create desc', per_page: 10
-    rescue
+    else
       @search = []
     end
     

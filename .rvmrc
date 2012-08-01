@@ -1,2 +1,3 @@
-ruby_version="1.9.3"
-gemset_name="baseGem"
+#!/usr/bin/env bash
+
+rvm ruby-1.9.3-p194@baseGem

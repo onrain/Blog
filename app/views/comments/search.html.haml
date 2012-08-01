@@ -1,31 +1,21 @@
-= form_tag(search_path, method:"get", class:"well form-search", style:"padding-top:30px;") do
+= form_tag(search_path, method:"get", class:"well form-search", style:"position:relative; top:35px; margin:0 auto; display:table;") do
   = text_field_tag :q 
   = submit_tag "Search", size:"40", class:"btn btn-primary"
-
+%br
+%br
 -unless @search.empty?
   .pub_art
     %hr
           
     %table.table.table-striped
-      %thead
-        %tr#sort_field
-          %th id
-          %th image
-          %th title
-          %th published
-          %th created
-          %th article description
-          %th article content
       %tbody
         - @search.each do |post|
           %tr
-            %td= link_to post.id, admin_path(post)
-            %td= image_tag post.image(:small) if post.image?
-            %td= post.title
-            %td= post.published
+            %td= link_to (image_tag post.image(:small)), article_path(post) if post.image?
+            %td= link_to post.title, article_path(post)
             %td= set_time post.date_create
-            %td= truncate(post.article_description.html_safe, :length => 123, :omission =>"...")
-            %td= truncate(post.article_content.html_safe, :length => 123, :omission =>"...")
+            %td= truncate(post.article_description.html_safe, :length => 220, :omission =>"...")
+            %td= truncate(post.article_content.html_safe, :length => 220, :omission =>"...")
   = will_paginate @search
 -else
   %h3{align:"center",style:"margin-top:30px;"}
