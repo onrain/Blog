@@ -1,5 +1,5 @@
 namespace :go do
-  task :new_art => :environment do
+  task :in_art => :environment do
     
    par = {
      article_content: "article_content \n"*100,
@@ -7,7 +7,8 @@ namespace :go do
      date_create: Time.now,
      published: "1",
      title: "title"*3,
-     image: ""
+     image_file_name:"duck_web.jpg",
+     image_content_type:"image/jpeg"
    }
    i=0
    while(i<30) do
@@ -17,17 +18,9 @@ namespace :go do
    puts "create done!" 
   end
 
-  task :destroy_art => :environment do
-   i=0
-   while i<30 do
-     Post.delete(:last)
-     i+=1
-   end 
+  task :un_art => :environment do
+   Post.delete_all
    puts "Destroy done"
-  end
-
-  task :new_admin => :environment do
-  
   end
 
   

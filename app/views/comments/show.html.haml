@@ -16,8 +16,8 @@
       =render 'form'
     - else
       %h3
-        Please login:
-        = link_to image_tag("facebook_logo2.png", width:"50", height:"50"), "/auth/facebook", id: "sign_in_art"
+        For leave a comment Please login:
+        = link_to image_tag("facebook_logo2.png", width:"30", height:"30"), "/auth/facebook", id: "sign_in_art"
     %hr
     #comment_box
       - @comments_q.each do |comment|

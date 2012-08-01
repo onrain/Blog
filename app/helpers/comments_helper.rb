@@ -88,14 +88,10 @@ module CommentsHelper
     l = rand(@hello.size)
     @hello[l]
   end
-  
+      
   def admin_email(email)
     if email =~ /admin/
-      if session[:user_id]
-        self.hello_lepra(current_user.name)
-      else
-        self.hello_lepra("Admin")
-      end
+      "Э-мэйл!"
     else
       email
     end

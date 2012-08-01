@@ -10,7 +10,8 @@ class AdminsController < ApplicationController
     else
       limit = params[:l]
     end
-    sort = sort_param(params[:s]) unless params[:s].blank?  
+    sort = sort_param(params[:s]) unless params[:s].blank?
+    sort ||="id"
     @last_articles = Post.limit(limit).published.ordering(sort)
   end
   
