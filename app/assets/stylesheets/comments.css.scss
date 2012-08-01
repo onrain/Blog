@@ -1,13 +1,13 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-#article {height: 100%;position: relative;padding-left: 40px;top:20px; left:70px;border-left: 1px dashed gray;padding-top: 10px;width:800px; display: block;}
+#article { height: 100%;position: relative;padding-left: 40px;top:20px; left:70px;border-left: 1px dashed gray;padding-top: 10px;width:800px; display: block;}
 #article img#image_b{ float:left; margin-right: 10px;}
 #article img#image_b > #article{margin: 0px 10px 0px 10px;}
 #more{ color:#3399CC; float:right; margin-right: 50px; clear: both;}
 #article hr{ clear: both; }
 #sign_in_art{ color: black; }
-#p_data{ float: right; clear: both; }
+#p_data{ float: right; clear: both; margin-right: 40px;}
 .article_show{ width:1200px; margin-left: 50px; border-left: gray dotted 1px; padding-left: 10px; }
 #art_div hr{ clear: both; }  
 img#show_img{ float: left; margin: 10px 25px 0px 0px; }
@@ -17,5 +17,3 @@ textarea#comment_area{ width:500px; height: 200px; resize: none; }
 #comment_box{ width:500px !important; }
 
 #curent_email { font-size: 17px;}
-div.search{ background-color: rgba(0,0,0,0.4); width:350px; height: 45px; position: relative; top:50px; right:540px; border-radius: 10px;}
-div.search form { padding-top:10px; padding-left:20px;}

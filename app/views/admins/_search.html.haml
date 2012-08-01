@@ -1,6 +1,5 @@
-= form_tag(admins_search_path, method:"get", class:"well form-search") do
+= form_tag(admins_search_path, method:"get", class:"navbar-search pull-left") do
   
-  = text_field_tag :q
-  
-  = submit_tag "Search", size:"40", class:"btn btn-primary"
+  = text_field_tag 'q', nil, :placeholder => 'Enter search term...', class:"search-query"
+
   

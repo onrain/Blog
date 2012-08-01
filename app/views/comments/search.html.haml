@@ -3,6 +3,7 @@
   = submit_tag "Search", size:"40", class:"btn btn-primary"
 %br
 %br
+
 -unless @search.empty?
   .pub_art
     %hr
@@ -14,9 +15,10 @@
             %td= link_to (image_tag post.image(:small)), article_path(post) if post.image?
             %td= link_to post.title, article_path(post)
             %td= set_time post.date_create
-            %td= truncate(post.article_description.html_safe, :length => 220, :omission =>"...")
-            %td= truncate(post.article_content.html_safe, :length => 220, :omission =>"...")
+            %td= link_to  (truncate(post.article_description.html_safe, :length => 220, :omission =>"...")), article_path(post)
+            %td= link_to (truncate(post.article_content.html_safe, :length => 220, :omission =>"...")), article_path(post)
   = will_paginate @search
 -else
   %h3{align:"center",style:"margin-top:30px;"}
     = search_title(params[:q], @search).html_safe
+    

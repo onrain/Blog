@@ -1,6 +1,4 @@
 =javascript_include_tag :comments
-%div{class:"search"}
-  = render 'search'
 
 .articles
   - @articles.each do |art|
@@ -18,5 +16,5 @@
       %hr
 
 %br
-
-= will_paginate @articles
+%div{style:"margin-left:70px;"}
+  = will_paginate @articles

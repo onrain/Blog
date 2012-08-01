@@ -11,8 +11,6 @@ OrangeBlog::Application.routes.draw do
     get "logout" => :destroy
   end
   
-  
-
   match "admins/edit/comment/:id" => "admins#edit_comment"
   match "admins/update/comment/:id" => "admins#update_comment"
   match "admins/search", to: "admins#search"
@@ -35,9 +33,10 @@ OrangeBlog::Application.routes.draw do
   
   match "/search", to: "comments#search"
   
-  match "home" => "comments#index"
+  match "home" => "comments#index" 
   
   root :to => 'comments#index'
+  
 
   resources :admins
   

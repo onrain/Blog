@@ -6,19 +6,26 @@
   = javascript_include_tag "application"
   = csrf_meta_tags
 %body
-  #header
-    -if request.fullpath =~ /admin/
-      = link_to "Orange Blog", admins_path, id:"main-label"
-    - else
-      = link_to "Orange Blog", home_path, id:"main-label"
-    #face_book_f
-      - if current_user
-        Signed in as
-        %strong#username
-          = current_user.name
-        = link_to "Sign out", signout_path, id: "sign_out"
+  %div{class:"navbar navbar-fixed-top"}
+    %div{class:"navbar-inner", id:"orange_h"}
+      %div{class:"container"}
+      -if request.fullpath =~ /admin/
+        %span{class:"s_div"}
+          = render 'admins/search'
+        = link_to "Orange Blog", admins_path, id:"main-label"
       - else
-        = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+        %span{class:"s_div"}
+          = render 'comments/search'
+        = link_to "Orange Blog", home_path, id:"main-label"
+      - if current_user
+        #sign
+          Signed in as
+          %strong#username
+            = current_user.name
+          = link_to "Sign out", signout_path, id: "sign_out"
+      - else
+        #sign
+          = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
 #admin_panel
 = yield
 

@@ -13,8 +13,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
 
+group :test do
+  gem "rspec-rails"
+  gem 'factory_girl'
+end
+
+gem 'jquery-rails'
+gem 'factory_girl_rails'
 gem 'paperclip'
 gem 'rmagick'
 gem 'haml-rails'
@@ -22,6 +28,8 @@ gem 'will_paginate', '~>3.0'
 gem 'omniauth-facebook'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'rspec-rails'
+
+gem 'vidibus-routing_error'
 
 gem 'jquery_datepicker'
 

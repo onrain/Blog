@@ -59,6 +59,11 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (3.6.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (3.6.0)
+      factory_girl (~> 3.6.0)
+      railties (>= 3.0.0)
     fancybox-rails (0.1.4)
       railties (>= 3.1.0)
     faraday (0.8.1)
@@ -179,6 +184,7 @@ GEM
     uglifier (1.2.6)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
+    vidibus-routing_error (0.2.2)
     warden (1.2.1)
       rack (>= 1.0)
     will_paginate (3.0.3)
@@ -189,6 +195,8 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
+  factory_girl
+  factory_girl_rails
   fancybox-rails
   haml-rails
   jquery-rails
@@ -203,4 +211,5 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
+  vidibus-routing_error
   will_paginate (~> 3.0)

@@ -4,6 +4,15 @@ class CommentsController < ApplicationController
   
   respond_to :html, :json, :xml
   
+  rescue_from ActionView::MissingTemplate do |exception|
+    render_not_found
+  end
+
+
+  def render_not_found
+   render template:"error/404.html.haml", :status => 404, :layout => false
+  end
+  
   def index    
     @articles = Post.published.paginate page: params[:page], order: 'date_create desc', per_page: 10
     respond_with @articles
@@ -34,7 +43,7 @@ class CommentsController < ApplicationController
   end
   
   def search
-    unless params[:q].blank?   
+    unless params[:q].blank?    
       @search = Post.search(params[:q].strip).paginate page: params[:page], order: 'date_create desc', per_page: 10
     else
       @search = []
@@ -44,7 +53,7 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
-    flash[:aletr] = "This comment is last!" if Comment.count < 2
+    flash[:alert] = "This comment is last!" if Comment.count < 2
     if @comment.destroy
       flash[:notice] = "The article has successfully deleted!"
       respond_with @comment, location:request.env['HTTP_REFERER']
