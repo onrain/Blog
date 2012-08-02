@@ -28,6 +28,7 @@ class AdminsController < ApplicationController
     sort = sort_param(params[:s]) unless params[:s].blank?
     @posts_p = Post.published.ordering(sort).paginate page: params[:page], order: 'date_create desc', per_page: 10
     respond_with @posts_p
+    #test
   end
 
   
