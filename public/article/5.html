@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html></html>
+<head>
+  <title>OrangeBlog</title>
+  <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/admins.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/comments.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/jquery-ui-1.8.22.custom.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/jquery-ui-timepicker-addon.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/sessions.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/jquery.fancybox.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <link href="/assets/fancybox.css?body=1" media="all" rel="stylesheet" type="text/css" />
+  <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery_ujs.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery-ui.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-transition.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-alert.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-modal.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-dropdown.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-scrollspy.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-tab.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-tooltip.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-popover.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-button.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-collapse.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
+  <script src="/assets/twitter/bootstrap.js?body=1" type="text/javascript"></script>
+  <script src="/assets/admins.js?body=1" type="text/javascript"></script>
+  <script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
+  <script src="/assets/comments.js?body=1" type="text/javascript"></script>
+  <script src="/assets/home.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery-ui-timepicker-addon.js?body=1" type="text/javascript"></script>
+  <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.fancybox.js?body=1" type="text/javascript"></script>
+  <script src="/assets/fancybox.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.core.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.widget.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.mouse.js?body=1" type="text/javascript"></script>
+  <script src="/assets/jquery.ui.draggable.js?body=1" type="text/javascript"></script>
+  <script src="/assets/application.js?body=1" type="text/javascript"></script>
+  <meta content="authenticity_token" name="csrf-param" />
+  <meta content="OzfmBUsWMUuTHCn0TTXmE8GHE8DTYTjG9jN8npcF930=" name="csrf-token" />
+</head>
+<body>
+  <div class='navbar navbar-fixed-top'>
+    <div class='navbar-inner' id='orange_h'>
+      <div class='container'></div>
+      <span class='s_div'>
+        <form accept-charset="UTF-8" action="/search" class="navbar-search pull-left" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+          <input class="search-query" id="q" name="q" placeholder="Enter search term..." type="text" />
+        </form>
+      </span>
+      <a href="/home" id="main-label">Orange Blog</a>
+      <div id='sign'>
+        <a href="/auth/facebook" id="sign_in">Sign in with Facebook</a>
+      </div>
+    </div>
+  </div>
+</body>
+<div id='admin_panel'></div>
+<div class='article_show'>
+  <div id='art_div'>
+    <p>
+      asdasd
+    </p>
+    <p>
+      <img alt="asdasd" class="thumbnail" id="show_img" src="/system/posts/images/medium_83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1343914939" title="asdasd" />
+    </p>
+    <p>
+      <br>
+    </p>
+    <p>
+      Date create:
+      <i>
+        August 02, 2012  AT 13:24
+      </i>
+    </p>
+    <hr>
+  </div>
+  <div id='comments_d'>
+    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="OzfmBUsWMUuTHCn0TTXmE8GHE8DTYTjG9jN8npcF930=" /></div>
+  <div class='well'>
+    Анекдоты о блондинках высмеивают арийский тип, Admin =)!
+    <h4></h4>
+    <div id='curent_email'>
+      admin@admin.com
+    </div>
+  </div>
+  <input id="comment_username" name="comment[username]" type="hidden" value="Admin" />
+  <input id="comment_email" name="comment[email]" type="hidden" value="admin@admin.com" />
+  <input id="comment_post_id" name="comment[post_id]" type="hidden" value="5" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
+</div>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
+    <hr>
+    <div id='comment_box'>
+    </div>
+  </div>
+  
+</div>
+<div id='footer'></div>
