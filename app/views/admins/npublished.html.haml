@@ -22,8 +22,8 @@
             %td= post.title
             %td= post.published
             %td= set_time post.date_create
-            %td= truncate(post.article_description.html_safe, :length => 123, :omission =>"...")
-            %td= truncate(post.article_content.html_safe, :length => 123, :omission =>"...")
+            %td= truncate(post.article_description.html_safe, :length => 123, :omission =>"...") if post.article_description?
+            %td= truncate(post.article_content.html_safe, :length => 123, :omission =>"...") if post.article_content?
             %td
               = link_to t('.show', :default => t("helpers.links.show")), admin_path(post), :class => 'btn btn-mini'
               = link_to t('.edit', :default => t("helpers.links.edit")), edit_admin_path(post), :class => 'btn btn-mini'

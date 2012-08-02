@@ -23,11 +23,11 @@
 %p
   %strong= model_class.human_attribute_name(:article_description) + ':'
   %br
-  = @post.article_description.html_safe
+  = @post.article_description.html_safe if @post.article_description? 
 %p
   %strong= model_class.human_attribute_name(:article_content) + ':'
   %br
-  = @post.article_content.html_safe
+  = @post.article_content.html_safe if @post.article_content?
 %p
   = image_tag @post.image(:medium) if @post.image?
 .form-actions

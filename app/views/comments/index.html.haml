@@ -6,7 +6,7 @@
       = link_to image_tag(art.image.url(:medium), alt:art.title, title:art.title, :id=>"image_b", class:"thumbnail"), art.image.url(:hard), class:"fancybox " if art.image?
       = link_to art.title, article_path(art), id:"title_l"
       %p
-        = art.article_description.html_safe
+        = art.article_description.html_safe if art.article_description?
       %br
       #p_data
         Published:

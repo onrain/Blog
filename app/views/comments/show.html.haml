@@ -7,7 +7,7 @@
     %p
       = image_tag @articles.image.url(:medium), id:"show_img", alt:@articles.title, title:@articles.title, class:"thumbnail" if @articles.image?
     %p
-      = raw @articles.article_content
+      = raw @articles.article_content if @articles.article_content?
     %p
       Date create:
       %i
