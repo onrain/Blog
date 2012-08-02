@@ -2,11 +2,11 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   
-  config.authentication_keys = [ :username ]
+  #config.authentication_keys = [ :username ]
   
-  config.http_authenticatable = true
+  #config.http_authenticatable = true
   
-  config.token_authentication_key = :auth_token
+  #config.token_authentication_key = :auth_token
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.

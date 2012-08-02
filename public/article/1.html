@@ -2,7 +2,7 @@
 <html></html>
 <head>
   <title>
-    Orange Blog
+    fffderek
   </title>
   <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/admins.css?body=1" media="all" rel="stylesheet" type="text/css" />
@@ -44,7 +44,7 @@
   <script src="/assets/jquery.ui.draggable.js?body=1" type="text/javascript"></script>
   <script src="/assets/application.js?body=1" type="text/javascript"></script>
   <meta content="authenticity_token" name="csrf-param" />
-  <meta content="1Dggt4c4Uy0baS3rn31lQ7xBN1NEcYTnoQ+LlEtIYCI=" name="csrf-token" />
+  <meta content="twtorO9z/myeYX8Q5O6pg52akgjTHLpowzzECMQ8cqI=" name="csrf-token" />
 </head>
 <body>
   <div class='navbar navbar-fixed-top'>
@@ -57,33 +57,60 @@
       </span>
       <a href="/home" id="main-label">Orange Blog</a>
       <div id='sign'>
-        <a href="/auth/facebook" id="sign_in">Sign in with Facebook</a>
+        Signed in as
+        <strong id='username'>
+          Sergey Slavin
+        </strong>
+        <a href="/signout" id="sign_out">Sign out</a>
       </div>
     </div>
   </div>
 </body>
 <div id='admin_panel'></div>
-<script src="/assets/comments.js?body=1" type="text/javascript"></script>
-<div class='articles'>
-  <div id='article'>
-    
-    <a href="/article/1" id="title_l">fffderek</a>
+<div class='article_show'>
+  <div id='art_div'>
+    <p>
+      fffderek
+    </p>
+    <p>
+      
+    </p>
     <p>
       <br>
     </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      August 02, 2012  AT 20:36
-    </div>
     <p>
-      <a href="/article/1" id="more">Read more...</a>
+      Date create:
+      <i>
+        August 02, 2012  AT 20:36
+      </i>
     </p>
     <hr>
   </div>
+  <div id='comments_d'>
+    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="twtorO9z/myeYX8Q5O6pg52akgjTHLpowzzECMQ8cqI=" /></div>
+  <div class='well'>
+    Индейка — единственный зверь хитрее человека, Sergey Slavin.
+    <h4>
+      <div id='curent_email'>
+        pankpeople@yandex.ru
+      </div>
+    </h4>
+  </div>
+  <input id="comment_username" name="comment[username]" type="hidden" value="Sergey Slavin" />
+  <input id="comment_email" name="comment[email]" type="hidden" value="pankpeople@yandex.ru" />
+  <input id="comment_post_id" name="comment[post_id]" type="hidden" value="1" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
 </div>
-<br>
-<div style='margin-left:70px;'>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
+    <hr>
+    <div id='comment_box'>
+    </div>
+  </div>
   
 </div>
 <div id='footer'></div>
