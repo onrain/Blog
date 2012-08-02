@@ -11,6 +11,7 @@ namespace :go do
      image_content_type:"image/jpeg",
      image_file_size:"18882"
    }
+
    i=0
    while(i<30) do
      Post.create(par)

@@ -49,9 +49,17 @@ class AdminsController < ApplicationController
     @post = Post.new(params[:post])
     Time.zone = "Kyiv"
     @post.date_create = Time.zone.now if params[:date_create].blank?
-    @post.save
-    flash[:notice] = "The article was successfully create!"
-    respond_with @post, location:admin_path(@post)
+    
+    respond_with(@post) do |format|
+      if @post.save
+        format.html{redirect_to admin_path(@post), notice:"The article was successfully create!"}
+      else
+        format.html{render action:"new"}
+        format.json{render json: @post.errors, status: :unprocessable_entity}
+      end
+    
+    end  
+    
   end
 
 
@@ -111,5 +119,5 @@ private
       sort = "id"
     end
   end
-    
+
 end

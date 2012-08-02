@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :post do
+  factory :posts do
      article_content "article_content \n"*100,
      article_description "article_description \n"*100,
      date_create Time.now,
@@ -14,8 +14,12 @@ end
 
 
 FactoryGirl.define do
-  factory :comment do
-  
+  factory :comments do
+     comment_content "Comment content",
+     data_p Time.now,
+     email "test@test.com",
+     post_id "1",
+     username "Username",
   end
 end
 
