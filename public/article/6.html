@@ -2,7 +2,7 @@
 <html></html>
 <head>
   <title>
-    Orange Blog
+    qweqwe
   </title>
   <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
   <link href="/assets/admins.css?body=1" media="all" rel="stylesheet" type="text/css" />
@@ -44,7 +44,7 @@
   <script src="/assets/jquery.ui.draggable.js?body=1" type="text/javascript"></script>
   <script src="/assets/application.js?body=1" type="text/javascript"></script>
   <meta content="authenticity_token" name="csrf-param" />
-  <meta content="NaeHmAKK/5iNyUNJYebos1WHfw2Vv7ytWDa4rvuGwIk=" name="csrf-token" />
+  <meta content="O6L5be7squZNW5d6N9jylr+ce7NpB8DIfh9QePVlPYs=" name="csrf-token" />
 </head>
 <body>
   <div class='navbar navbar-fixed-top'>
@@ -63,11 +63,49 @@
   </div>
 </body>
 <div id='admin_panel'></div>
-<script src="/assets/comments.js?body=1" type="text/javascript"></script>
-<div class='articles'>
+<div class='article_show'>
+  <div id='art_div'>
+    <p>
+      qweqwe
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      <br>
+    </p>
+    <p>
+      Date create:
+      <i>
+        August 02, 2012  AT 16:43
+      </i>
+    </p>
+    <hr>
+  </div>
+  <div id='comments_d'>
+    <form accept-charset="UTF-8" action="/comments" class="new_comment" id="new_comment" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="O6L5be7squZNW5d6N9jylr+ce7NpB8DIfh9QePVlPYs=" /></div>
+  <div class='well'>
+    Все что вы сдесь видете, далжно оставатся сикретам, Admin =).
+    <h4></h4>
+    <div id='curent_email'>
+      admin@admin.com
+    </div>
+  </div>
+  <input id="comment_username" name="comment[username]" type="hidden" value="Admin" />
+  <input id="comment_email" name="comment[email]" type="hidden" value="admin@admin.com" />
+  <input id="comment_post_id" name="comment[post_id]" type="hidden" value="6" />
+<div class='field'>
+  <textarea cols="40" id="comment_area" name="comment[comment_content]" rows="20">
+</textarea>
 </div>
-<br>
-<div style='margin-left:70px;'>
+<div class='actions'>
+  <input class="btn btn-primary" name="commit" type="submit" value="Comment" />
+</div>
+</form>
+    <hr>
+    <div id='comment_box'>
+    </div>
+  </div>
   
 </div>
 <div id='footer'></div>

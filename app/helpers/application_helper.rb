@@ -8,4 +8,8 @@ module ApplicationHelper
     Time.zone = "Kyiv"
     Time.zone.now
   end
+  
+  def title(title)
+    title ||= "Orange Blog"
+  end
 end

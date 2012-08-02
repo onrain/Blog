@@ -11,7 +11,6 @@ end
 
 
 
-
 Factory.define :comment do |u|
      u.comment_content "Comment content"
      u.data_p Time.now

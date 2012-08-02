@@ -1,6 +1,6 @@
 Factory.define :post do |u|
-     u.article_content "article_content \n"*100
-     u.article_description "article_description \n"*100
+     u.article_content "article_content \n"
+     u.article_description "article_description \n"
      u.date_create Time.now
      u.published "1"
      u.title "title"*3

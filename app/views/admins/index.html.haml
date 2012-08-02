@@ -11,6 +11,12 @@
 
 =render 'nav'
 
+-if notice
+  %div{class:"alert alert-error"}
+    %button{:class=>"close", :"data-dismiss"=>:"alert", :value=>"x"}
+    =notice
+
+
 -unless @last_articles.empty?
   .pub_art
     %h1 Last published articles
