@@ -1,4 +1,16 @@
 =javascript_include_tag :comments
+-if notice
+  %div{class:"alert alert-error", style:"position:relative; top: 30px; width:400px; height:30px; margin: 0 auto;"}
+    %button{:class=>"close", :"data-dismiss"=>:"alert"}
+      ×
+    =notice
+-if flash[:alert]
+  %div{class:"alert alert-success", style:"position:relative; top: 30px; width:400px; height:30px; margin: 0 auto;"}
+    %button{:class=>"close", :"data-dismiss"=>:"alert"}
+      ×
+    =flash[:alert]
+    
+    
 .subscribe
   %button{class:"btn btn-primary", :"data-toggle"=>:"modal", href:"#subscribe", id:"subsribe", style:"position: fixed;"}
     Subscribe
@@ -13,9 +25,9 @@
     %p
       Здравствуйте
       %br Для того чтобы подписаться на обновления сайта необходимо ввести свой e-mail!
-    = form_tag("subscribe", method:"post") do
-      = text_field_tag "email"
-      = submit_tag("Подписаться", class:"btn btn-primary", style:"position:relative; top:-5px;")
+    = form_for(@subscribe, method:"post") do |f|
+      = f.text_field :email
+      = f.submit("Подписаться", class:"btn btn-primary", style:"position:relative; top:-5px;")
 
     
   %div{class:"modal-footer"}

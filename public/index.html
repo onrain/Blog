@@ -12,6 +12,7 @@
     <link href="/assets/jquery-ui-timepicker-addon.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/sessions.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/subscribe.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/jquery.fancybox.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/fancybox.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
@@ -36,6 +37,7 @@
     <script src="/assets/home.js?body=1" type="text/javascript"></script>
     <script src="/assets/jquery-ui-timepicker-addon.js?body=1" type="text/javascript"></script>
     <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
+    <script src="/assets/subscribe.js?body=1" type="text/javascript"></script>
     <script src="/assets/jquery.fancybox.js?body=1" type="text/javascript"></script>
     <script src="/assets/fancybox.js?body=1" type="text/javascript"></script>
     <script src="/assets/application.js?body=1" type="text/javascript"></script>
@@ -76,8 +78,8 @@
       Здравствуйте
       <br>Для того чтобы подписаться на обновления сайта необходимо ввести свой e-mail!</br>
     </p>
-    <form accept-charset="UTF-8" action="subscribe" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="DbrviRtwUYjfcHJ6Q4Ij5KvHi4scoCfM89Sc2SdvAMk=" /></div>
-        <input id="email" name="email" type="text" />
+    <form accept-charset="UTF-8" action="/subscribes" class="new_subscribe" id="new_subscribe" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="DbrviRtwUYjfcHJ6Q4Ij5KvHi4scoCfM89Sc2SdvAMk=" /></div>
+        <input id="subscribe_email" name="subscribe[email]" size="30" type="text" />
         <input class="btn btn-primary" name="commit" style="position:relative; top:-5px;" type="submit" value="Подписаться" />
     </form>
   </div>

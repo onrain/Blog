@@ -12,6 +12,7 @@
     <link href="/assets/jquery-ui-timepicker-addon.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/sessions.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/subscribe.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/jquery.fancybox.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/fancybox.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
@@ -36,18 +37,15 @@
     <script src="/assets/home.js?body=1" type="text/javascript"></script>
     <script src="/assets/jquery-ui-timepicker-addon.js?body=1" type="text/javascript"></script>
     <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
+    <script src="/assets/subscribe.js?body=1" type="text/javascript"></script>
     <script src="/assets/jquery.fancybox.js?body=1" type="text/javascript"></script>
     <script src="/assets/fancybox.js?body=1" type="text/javascript"></script>
-    <script src="/assets/jquery.ui.core.js?body=1" type="text/javascript"></script>
-    <script src="/assets/jquery.ui.widget.js?body=1" type="text/javascript"></script>
-    <script src="/assets/jquery.ui.mouse.js?body=1" type="text/javascript"></script>
-    <script src="/assets/jquery.ui.draggable.js?body=1" type="text/javascript"></script>
     <script src="/assets/application.js?body=1" type="text/javascript"></script>
     <meta content="authenticity_token" name="csrf-param" />
-    <meta content="ANmd7URNMl8rEJsN2dRDdAsz7aF2KFJ9q2c1YTB44qI=" name="csrf-token" />
+    <meta content="DbrviRtwUYjfcHJ6Q4Ij5KvHi4scoCfM89Sc2SdvAMk=" name="csrf-token" />
   </head>
   <body>
-    <div class='navbar navbar-fixed-top'>
+    <div class='navbar navbar-fixed-top' id='nav_admin'>
       <div class='navbar-inner' id='orange_h'>
         <div class='container'></div>
         <span class='s_div'>
@@ -57,129 +55,76 @@
         </span>
         <a href="/home" id="main-label">Orange Blog</a>
         <div id='sign'>
-          Signed in as
-          <strong id='username'>
-            Sergey Slavin
-          </strong>
-          <a href="/signout" id="sign_out">Sign out</a>
+          <a href="/auth/facebook" id="sign_in">Sign in with Facebook</a>
         </div>
       </div>
     </div>
     <div id='admin_panel'></div>
     <script src="/assets/comments.js?body=1" type="text/javascript"></script>
+<div class='alert alert-success' style='position:relative; top: 30px; width:400px; height:30px; margin: 0 auto;'>
+  <button class='close' data-dismiss='alert'>
+    ×
+  </button>
+  Вы успешно подписались на обновления.
+</div>
+<div class='subscribe'>
+  <button class='btn btn-primary' data-toggle='modal' href='#subscribe' id='subsribe' style='position: fixed;'>
+    Subscribe
+  </button>
+</div>
+<div class='modal hide fade' id='myModal'>
+  <div class='modal-header'>
+    <button class='close' data-dismiss='modal'>
+      ×
+    </button>
+    <h3>Подписка на рассылку новостей.</h3>
+  </div>
+  <div class='modal-body'>
+    <p>
+      Здравствуйте
+      <br>Для того чтобы подписаться на обновления сайта необходимо ввести свой e-mail!</br>
+    </p>
+    <form accept-charset="UTF-8" action="/subscribes" class="new_subscribe" id="new_subscribe" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="DbrviRtwUYjfcHJ6Q4Ij5KvHi4scoCfM89Sc2SdvAMk=" /></div>
+        <input id="subscribe_email" name="subscribe[email]" size="30" type="text" />
+        <input class="btn btn-primary" name="commit" style="position:relative; top:-5px;" type="submit" value="Подписаться" />
+    </form>
+  </div>
+  <div class='modal-footer'>
+    <a class='btn' data-dismiss='modal' href='#'>
+      Close
+    </a>
+  </div>
+</div>
 <div class='articles'>
   <div id='article'>
-    <a href="/system/posts/images/hard_duck_web.jpg" class="fancybox "><img alt="titletitletitle" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg" title="titletitletitle" /></a>
-    <a href="/article/1" id="title_l">titletitletitle</a>
+    <a href="/system/posts/images/hard_duck_web.jpg?1345098465" class="fancybox "><img alt="qqqqq" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg?1345098465" title="qqqqq" /></a>
+    <a href="/article/32" id="title_l">qqqqq</a>
     <p>
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description
+      <br>
     </p>
     <br>
     <div id='p_data'>
       Published:
-      August 15, 2012  AT 19:20
+      August 16, 2012  AT 06:27
     </div>
     <p>
-      <a href="/article/1" id="more">Read more...</a>
+      <a href="/article/32" id="more">Read more...</a>
+    </p>
+    <hr>
+  </div>
+  <div id='article'>
+    <a href="/system/posts/images/hard_duck_web.jpg?1345097846" class="fancybox "><img alt="qqqq" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg?1345097846" title="qqqq" /></a>
+    <a href="/article/31" id="title_l">qqqq</a>
+    <p>
+      <br>
+    </p>
+    <br>
+    <div id='p_data'>
+      Published:
+      August 16, 2012  AT 06:17
+    </div>
+    <p>
+      <a href="/article/31" id="more">Read more...</a>
     </p>
     <hr>
   </div>
@@ -291,10 +236,125 @@
     <br>
     <div id='p_data'>
       Published:
-      August 15, 2012  AT 19:20
+      August 16, 2012  AT 06:16
     </div>
     <p>
       <a href="/article/2" id="more">Read more...</a>
+    </p>
+    <hr>
+  </div>
+  <div id='article'>
+    <a href="/system/posts/images/hard_duck_web.jpg" class="fancybox "><img alt="titletitletitle" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg" title="titletitletitle" /></a>
+    <a href="/article/3" id="title_l">titletitletitle</a>
+    <p>
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description 
+      article_description
+    </p>
+    <br>
+    <div id='p_data'>
+      Published:
+      August 16, 2012  AT 06:16
+    </div>
+    <p>
+      <a href="/article/3" id="more">Read more...</a>
     </p>
     <hr>
   </div>
@@ -406,7 +466,7 @@
     <br>
     <div id='p_data'>
       Published:
-      August 15, 2012  AT 19:20
+      August 16, 2012  AT 06:16
     </div>
     <p>
       <a href="/article/4" id="more">Read more...</a>
@@ -521,7 +581,7 @@
     <br>
     <div id='p_data'>
       Published:
-      August 15, 2012  AT 19:20
+      August 16, 2012  AT 06:16
     </div>
     <p>
       <a href="/article/5" id="more">Read more...</a>
@@ -636,7 +696,7 @@
     <br>
     <div id='p_data'>
       Published:
-      August 15, 2012  AT 19:20
+      August 16, 2012  AT 06:16
     </div>
     <p>
       <a href="/article/6" id="more">Read more...</a>
@@ -751,7 +811,7 @@
     <br>
     <div id='p_data'>
       Published:
-      August 15, 2012  AT 19:20
+      August 16, 2012  AT 06:16
     </div>
     <p>
       <a href="/article/7" id="more">Read more...</a>
@@ -866,7 +926,7 @@
     <br>
     <div id='p_data'>
       Published:
-      August 15, 2012  AT 19:20
+      August 16, 2012  AT 06:16
     </div>
     <p>
       <a href="/article/8" id="more">Read more...</a>
@@ -981,247 +1041,17 @@
     <br>
     <div id='p_data'>
       Published:
-      August 15, 2012  AT 19:20
+      August 16, 2012  AT 06:16
     </div>
     <p>
       <a href="/article/9" id="more">Read more...</a>
     </p>
     <hr>
   </div>
-  <div id='article'>
-    <a href="/system/posts/images/hard_duck_web.jpg" class="fancybox "><img alt="titletitletitle" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg" title="titletitletitle" /></a>
-    <a href="/article/10" id="title_l">titletitletitle</a>
-    <p>
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description
-    </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      August 15, 2012  AT 19:20
-    </div>
-    <p>
-      <a href="/article/10" id="more">Read more...</a>
-    </p>
-    <hr>
-  </div>
-  <div id='article'>
-    <a href="/system/posts/images/hard_duck_web.jpg" class="fancybox "><img alt="titletitletitle" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg" title="titletitletitle" /></a>
-    <a href="/article/11" id="title_l">titletitletitle</a>
-    <p>
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description
-    </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      August 15, 2012  AT 19:20
-    </div>
-    <p>
-      <a href="/article/11" id="more">Read more...</a>
-    </p>
-    <hr>
-  </div>
 </div>
 <br>
 <div style='margin-left:70px;'>
-  <div class="pagination"><span class="previous_page disabled">&#8592; Previous</span> <em class="current">1</em> <a rel="next" href="/home?page=2">2</a> <a href="/home?page=3">3</a> <a class="next_page" rel="next" href="/home?page=2">Next &#8594;</a></div>
+  <div class="pagination"><span class="previous_page disabled">&#8592; Previous</span> <em class="current">1</em> <a rel="next" href="/home?page=2">2</a> <a href="/home?page=3">3</a> <a href="/home?page=4">4</a> <a class="next_page" rel="next" href="/home?page=2">Next &#8594;</a></div>
 </div>
     <div id='footer'></div>
   </body>

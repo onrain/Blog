@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class CommentsController < ApplicationController
   
   caches_page :index, :show, :gzip => :best_speed
@@ -15,7 +17,9 @@ class CommentsController < ApplicationController
   
   def index    
     @articles = Post.published.paginate page: params[:page], order: 'date_create desc', per_page: 10
+    @subscribe = Subscribe.new
     respond_with @articles
+     
   end
 
 
