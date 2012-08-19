@@ -101,6 +101,14 @@ class AdminsController < ApplicationController
     
   end
   
+  def subscribes
+    @subscribes = Subscribe.all
+  end
+  
+  def removesubscribes
+    
+  end
+  
 private
   def sort_param(s)
     case s

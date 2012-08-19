@@ -7,11 +7,13 @@ class SubscribeController < ApplicationController
     subscribe = Subscribe.new(params[:subscribe])   
     return redirect_to request.env['HTTP_REFERER'], alert: 'Вы успешно подписались на обновления.' if subscribe.save
 
-    return redirect_to home_path, notice: "Возникла ошибка =(" if subscribe.errors.any?
-         
-      
+    return redirect_to home_path, notice: "Возникла ошибка =(" if subscribe.errors.any?  
   end
-
+  
   def destroy
+    sub = Subscribe.find(params[:id])
+    sub.destroy
+    redirect_to request.env['HTTP_REFERER'], notice:"Подписчик удален!"
+
   end
 end

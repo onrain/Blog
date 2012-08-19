@@ -3,22 +3,17 @@ OrangeBlog::Application.routes.draw do
 
   match "subscribes", to: "subscribe#new"
 
-  get "subscribe/destroy"
+
   
   #devise_for :admin_auths do
-  devise_scope :admin_auths do
+  devise_for :admin_auths do
     get '/admin_auths/sign_out' => 'devise/sessions#destroy'
     post '/admin_auths/sign_in' => 'devise/sessions#create'
   end
 
   
-=begin
-  controller :session_admin do
-    get "login" => :new
-    post "login" => :create
-    get "logout" => :destroy
-  end
-=end  
+  match "admins/subscribes", to: "admins#subscribes"
+  
   match "admins/edit/comment/:id" => "admins#edit_comment"
   match "admins/update/comment/:id" => "admins#update_comment"
   match "admins/search", to: "admins#search"

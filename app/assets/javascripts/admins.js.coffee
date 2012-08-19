@@ -9,6 +9,7 @@ $(document).ready ->
     when "/admins/post/published" then $('#pub_art').addClass('active')
     when "/admins/post/npublished" then $('#n_pub_art').addClass('active')
     when "/admins/search" then $('#search').addClass('active')
+    when "/admins/subscribes" then $('#subscribes').addClass('active')
     
   $('.field_with_errors').click ->
     $(this).removeClass('field_with_errors')
