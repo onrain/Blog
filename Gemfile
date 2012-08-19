@@ -39,4 +39,6 @@ gem 'devise'
 
 gem 'fancybox-rails'
 
-gem 'cucumber'
+gem "mail"
+
+

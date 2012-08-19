@@ -1,4 +1,27 @@
 =javascript_include_tag :comments
+.subscribe
+  %button{class:"btn btn-primary", :"data-toggle"=>:"modal", href:"#subscribe", id:"subsribe", style:"position: fixed;"}
+    Subscribe
+
+%div{class:"modal hide fade", id:"myModal"}
+  .modal-header
+    %button{class:"close", :"data-dismiss"=>:"modal"}
+      ×
+    %h3 Подписка на рассылку новостей.
+
+  %div{class:"modal-body"}
+    %p
+      Здравствуйте
+      %br Для того чтобы подписаться на обновления сайта необходимо ввести свой e-mail!
+    = form_tag("subscribe", method:"post") do
+      = text_field_tag "email"
+      = submit_tag("Подписаться", class:"btn btn-primary", style:"position:relative; top:-5px;")
+
+    
+  %div{class:"modal-footer"}
+    %a{href:"#", class:"btn", :"data-dismiss"=>:"modal"}
+      Close
+
 
 .articles
   - @articles.each do |art|

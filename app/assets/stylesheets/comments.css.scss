@@ -17,3 +17,15 @@ textarea#comment_area{ width:500px; height: 200px; resize: none; }
 #comment_box{ width:500px !important; }
 
 #curent_email { font-size: 17px;}
+
+
+#subsribe{ width:150px; height: 50px;  position: absolute; left:-60px; top:100px;
+writing-mode:tb-rl;
+-webkit-transform:rotate(90deg);
+-moz-transform:rotate(90deg);
+-o-transform: rotate(90deg);
+white-space:nowrap;
+
+}
+
+#subsribe:hover{ }

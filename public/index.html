@@ -38,10 +38,6 @@
     <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
     <script src="/assets/jquery.fancybox.js?body=1" type="text/javascript"></script>
     <script src="/assets/fancybox.js?body=1" type="text/javascript"></script>
-    <script src="/assets/jquery.ui.core.js?body=1" type="text/javascript"></script>
-    <script src="/assets/jquery.ui.widget.js?body=1" type="text/javascript"></script>
-    <script src="/assets/jquery.ui.mouse.js?body=1" type="text/javascript"></script>
-    <script src="/assets/jquery.ui.draggable.js?body=1" type="text/javascript"></script>
     <script src="/assets/application.js?body=1" type="text/javascript"></script>
     <meta content="authenticity_token" name="csrf-param" />
     <meta content="DbrviRtwUYjfcHJ6Q4Ij5KvHi4scoCfM89Sc2SdvAMk=" name="csrf-token" />
@@ -63,6 +59,34 @@
     </div>
     <div id='admin_panel'></div>
     <script src="/assets/comments.js?body=1" type="text/javascript"></script>
+<div class='subscribe'>
+  <button class='btn btn-primary' data-toggle='modal' href='#subscribe' id='subsribe' style='position: fixed;'>
+    Subscribe
+  </button>
+</div>
+<div class='modal hide fade' id='myModal'>
+  <div class='modal-header'>
+    <button class='close' data-dismiss='modal'>
+      ×
+    </button>
+    <h3>Подписка на рассылку новостей.</h3>
+  </div>
+  <div class='modal-body'>
+    <p>
+      Здравствуйте
+      <br>Для того чтобы подписаться на обновления сайта необходимо ввести свой e-mail!</br>
+    </p>
+    <form accept-charset="UTF-8" action="subscribe" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="DbrviRtwUYjfcHJ6Q4Ij5KvHi4scoCfM89Sc2SdvAMk=" /></div>
+        <input id="email" name="email" type="text" />
+        <input class="btn btn-primary" name="commit" style="position:relative; top:-5px;" type="submit" value="Подписаться" />
+    </form>
+  </div>
+  <div class='modal-footer'>
+    <a class='btn' data-dismiss='modal' href='#'>
+      Close
+    </a>
+  </div>
+</div>
 <div class='articles'>
   <div id='article'>
     <a href="/system/posts/images/hard_duck_web.jpg?1345098465" class="fancybox "><img alt="qqqqq" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg?1345098465" title="qqqqq" /></a>
