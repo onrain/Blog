@@ -1,5 +1,6 @@
 OrangeBlog::Application.routes.draw do
   
+  resources :walls
 
   devise_for :admin_auths do
     get '/admin_auths/sign_out' => 'devise/sessions#destroy'

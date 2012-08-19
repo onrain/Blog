@@ -1,13 +1,5 @@
 - model_class = Post
 .page-header
-  %h3#admin_label
-    Admin Panel
-    - if admin_auth_signed_in?
-      Signed in as:
-      = current_admin_auth.email
-      = link_to "Sign out",  destroy_admin_auth_session_path, :method => :delete
-    - else
-      = link_to "Sign in", new_admin_auth_session_path
 
 =render 'nav'
 

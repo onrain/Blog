@@ -3,31 +3,51 @@ require 'spec_helper'
 describe Post do
   
   before(:each) do
-    @post = Factory(:post)
+    FactoryGirl.build(:post)
   end
+
 
   it "should be able to create a new post" do
-    puts @post.errors.inspect
-    @post.should be_valid
+   FactoryGirl.attributes_for(:post).size.should_not eq(0)
   end
+   
   it "should be shorter than 150 characters not be valid" do
-    Factory.build(:post, :title => 'a'*160).should_not be_valid
+    FactoryGirl.build(:post, :title => 'a'*160).should_not be_valid
+
+    FactoryGirl.build(:post, :title=>'a'*150).should be_valid
   end
 
-  it "should be shorter than 150 characters be valid" do
-    Factory.build(:post).should be_valid
-  end
   
   it "should not be valid image field" do
-     Factory.build(:post, :image_content_type => "image/gif").should_not be_valid
+     FactoryGirl.build(:post, :image_content_type => "image/gif").should_not be_valid
 
-     Factory.build(:post, :image_content_type => "image/jpg").should be_valid
+     FactoryGirl.build(:post, :image_content_type => "image/jpg").should be_valid
   end
 
   it "should not be valid image size" do
-     Factory.build(:post, :image_file_size => "2000").should_not be_valid
+     FactoryGirl.build(:post, :image_file_size => 2**20).should_not be_valid
 
-     Factory.build(:post, :image_file_size => "500").should be_valid
+     FactoryGirl.build(:post, :image_file_size => "5000").should be_valid
+  end
+
+   it "should create new title" do
+    
+    auth = FactoryGirl.build(:admin_auth)
+    if auth.authentication_token.should eq("dsfg3254$ar$qcc")
+    
+      Post.create(title:"new title").should have(:no).errors_on(:title)
+
+      post = Post.where(title:"new title")
+      for p in post
+        p.title.should eq("new title")
+      end
+    end
+  end
+
+  it "should be delete post" do
+    post = Post.where(title:"new title")
+    post.delete_all
+    post.should be_empty
   end
 
  

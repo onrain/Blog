@@ -67,7 +67,9 @@ class AdminsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     @post.update_attributes(params[:post])
-    flash[:notice] = "Update success!"
+    if @post.save
+      flash[:notice] = "Update success!"
+    end
     respond_with @post, location:admin_path(@post)
   end
 

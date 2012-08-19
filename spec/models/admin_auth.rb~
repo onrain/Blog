@@ -1,0 +1,21 @@
+require 'spec_helper'
+
+describe "admin authenticate" do
+  it "should be login to admin panel" do
+    visit 'admin_auths/sign_in'
+    
+    fill_in "Email",                 :with => "admin@admin.com"
+    fill_in "Password",              :with => "111222"
+
+    click_button "Sign in"
+
+    page.should have_content("Signed in successfully.")
+  end
+   
+  it "should be logout admin penel" do
+    visit '/admins'
+    click_link 'Sign out'
+    page.should have_css('.articles')
+  end
+
+end
