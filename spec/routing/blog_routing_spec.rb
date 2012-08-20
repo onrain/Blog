@@ -1,34 +1,34 @@
 require 'spec_helper'
 
-describe AdminsController do
+describe PostsController do
   describe "routing" do
 
     it "recognizes and generates #index" do
-      { :get => "/admins" }.should route_to(:controller => "admins", :action => "index")
+      { :get => "/posts" }.should route_to(:controller => "posts", :action => "index")
     end
 
     it "recognizes and generates #create" do
-      { :post => "/admins" }.should route_to(:controller => "admins", :action => "create")
+      { :post => "/posts" }.should route_to(:controller => "posts", :action => "create")
     end
 
     it "recognizes and generates #update" do
-      { :put => "/admins/1" }.should route_to(:controller => "admins", :action => "update", :id => "1")
+      { :put => "/posts/1" }.should route_to(:controller => "posts", :action => "update", :id => "1")
     end
 
     it "recognizes and generates #destroy" do
-      { :delete => "/admins/1" }.should route_to(:controller => "admins", :action => "destroy", :id => "1")
+      { :delete => "/posts/1" }.should route_to(:controller => "posts", :action => "destroy", :id => "1")
     end
 
      it "recognizes and generates #edit comment" do
-      { :get => "/admins/edit/comment/1" }.should route_to(:controller => "admins", :action => "edit_comment", :id => "1")
+      { :get => "/posts/edit/comment/1" }.should route_to(:controller => "posts", :action => "edit_comment", :id => "1")
     end
 
     it "recognizes and generates #update comment" do
-      { :get => "/admins/update/comment/1" }.should route_to(:controller => "admins", :action => "update_comment", :id => "1")
+      { :get => "/posts/update/comment/1" }.should route_to(:controller => "posts", :action => "update_comment", :id => "1")
     end
 
     it "recognizes and generates #search" do
-      { :get => "/admins/search" }.should route_to(:controller => "admins", :action => "search")
+      { :get => "/posts/search" }.should route_to(:controller => "posts", :action => "search")
     end
 
   end

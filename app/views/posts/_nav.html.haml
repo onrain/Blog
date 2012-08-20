@@ -1,0 +1,13 @@
+%ul{:class=>"nav nav-tabs", id:"nav-bar"}
+  %li{id:"new_art"}
+    = link_to "New Article", posts_post_new_path 
+  %li{id:"pub_art"}
+    = link_to "Published articles", posts_post_published_path
+  %li{id:"n_pub_art"}
+    = link_to "No published articles", posts_post_npublished_path
+  %li{id:"comments"}
+    = link_to "Comments", posts_comments_path
+  %li{id:"search"}
+    = link_to "Search", posts_search_path
+  %li{id:"subscribes"}
+    = link_to "Subscribes", posts_subscribes_path

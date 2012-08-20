@@ -5,11 +5,11 @@
       Orange Blog
     </title>
     <link href="/assets/application.css?body=1" media="all" rel="stylesheet" type="text/css" />
-    <link href="/assets/admins.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/bootstrap_and_overrides.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/comments.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/jquery-ui-1.8.22.custom.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/jquery-ui-timepicker-addon.css?body=1" media="all" rel="stylesheet" type="text/css" />
+    <link href="/assets/post.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/scaffolds.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/sessions.css?body=1" media="all" rel="stylesheet" type="text/css" />
     <link href="/assets/subscribe.css?body=1" media="all" rel="stylesheet" type="text/css" />
@@ -31,18 +31,18 @@
     <script src="/assets/twitter/bootstrap/bootstrap-carousel.js?body=1" type="text/javascript"></script>
     <script src="/assets/twitter/bootstrap/bootstrap-typeahead.js?body=1" type="text/javascript"></script>
     <script src="/assets/twitter/bootstrap.js?body=1" type="text/javascript"></script>
-    <script src="/assets/admins.js?body=1" type="text/javascript"></script>
     <script src="/assets/bootstrap.js?body=1" type="text/javascript"></script>
     <script src="/assets/comments.js?body=1" type="text/javascript"></script>
     <script src="/assets/home.js?body=1" type="text/javascript"></script>
     <script src="/assets/jquery-ui-timepicker-addon.js?body=1" type="text/javascript"></script>
+    <script src="/assets/post.js?body=1" type="text/javascript"></script>
     <script src="/assets/sessions.js?body=1" type="text/javascript"></script>
     <script src="/assets/subscribe.js?body=1" type="text/javascript"></script>
     <script src="/assets/jquery.fancybox.js?body=1" type="text/javascript"></script>
     <script src="/assets/fancybox.js?body=1" type="text/javascript"></script>
     <script src="/assets/application.js?body=1" type="text/javascript"></script>
     <meta content="authenticity_token" name="csrf-param" />
-    <meta content="+ySrkY7FRKnUh/c/rimqucvV8nqbfCWc+wmUc1pdPuE=" name="csrf-token" />
+    <meta content="DHCwaQurytZygeWo1CTPJrr/uh2J62rdyC1o8WOQoX8=" name="csrf-token" />
   </head>
   <body>
     <div class='navbar navbar-fixed-top' id='nav_admin'>
@@ -61,6 +61,12 @@
     </div>
     <div id='admin_panel'></div>
     <script src="/assets/comments.js?body=1" type="text/javascript"></script>
+<div class='alert alert-error' style='position:relative; top: 30px; width:400px; height:30px; margin: 0 auto;'>
+  <button class='close' data-dismiss='alert'>
+    ×
+  </button>
+  Signed out successfully.
+</div>
 <div class='subscribe'>
   <button class='btn btn-primary' data-toggle='modal' href='#subscribe' id='subsribe' style='position: fixed;'>
     Subscribe
@@ -78,7 +84,7 @@
       Здравствуйте
       <br>Для того чтобы подписаться на обновления сайта необходимо ввести свой e-mail!</br>
     </p>
-    <form accept-charset="UTF-8" action="/subscribes" class="new_subscribe" id="new_subscribe" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="+ySrkY7FRKnUh/c/rimqucvV8nqbfCWc+wmUc1pdPuE=" /></div>
+    <form accept-charset="UTF-8" action="/subscribes" class="new_subscribe" id="new_subscribe" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="DHCwaQurytZygeWo1CTPJrr/uh2J62rdyC1o8WOQoX8=" /></div>
         <input id="subscribe_email" name="subscribe[email]" size="30" type="text" />
         <input class="btn btn-primary" name="commit" style="position:relative; top:-5px;" type="submit" value="Подписаться" />
     </form>
@@ -90,6 +96,22 @@
   </div>
 </div>
 <div class='articles'>
+  <div id='article'>
+    <a href="/system/posts/images/hard_83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1345440935" class="fancybox "><img alt="test" class="thumbnail" id="image_b" src="/system/posts/images/medium_83d5fe1db35fc39aad85f84560ce2ef7.jpeg?1345440935" title="test" /></a>
+    <a href="/article/33" id="title_l">test</a>
+    <p>
+      <br>
+    </p>
+    <br>
+    <div id='p_data'>
+      Published:
+      August 20, 2012  AT 05:35
+    </div>
+    <p>
+      <a href="/article/33" id="more">Read more...</a>
+    </p>
+    <hr>
+  </div>
   <div id='article'>
     <a href="/system/posts/images/hard_duck_web.jpg?1345098465" class="fancybox "><img alt="qqqqq" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg?1345098465" title="qqqqq" /></a>
     <a href="/article/32" id="title_l">qqqqq</a>
@@ -924,121 +946,6 @@
     </div>
     <p>
       <a href="/article/8" id="more">Read more...</a>
-    </p>
-    <hr>
-  </div>
-  <div id='article'>
-    <a href="/system/posts/images/hard_duck_web.jpg" class="fancybox "><img alt="titletitletitle" class="thumbnail" id="image_b" src="/system/posts/images/medium_duck_web.jpg" title="titletitletitle" /></a>
-    <a href="/article/9" id="title_l">titletitletitle</a>
-    <p>
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description 
-      article_description
-    </p>
-    <br>
-    <div id='p_data'>
-      Published:
-      August 16, 2012  AT 06:16
-    </div>
-    <p>
-      <a href="/article/9" id="more">Read more...</a>
     </p>
     <hr>
   </div>

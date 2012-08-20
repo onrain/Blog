@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe "admin authenticate", :type => :request do
+describe "post authenticate", :type => :request do
   self.use_transactional_fixtures = false
 
   it "should be login to admin panel" do
-    visit '/admin_auths/sign_in'
+    visit '/admin_auth/sign_in'
     admin = FactoryGirl.build(:admin_auth)
     
     fill_in "Email",                 :with => admin.email

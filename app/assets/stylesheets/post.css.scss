@@ -1,0 +1,11 @@
+.admin_comment{ display: block; position: relative; top:40px; left:40px; }
+.pub_art{ display: block; position: relative; top:10px; }
+#nav-bar{ padding-top:40px; }
+.login{ position: relative; top: 50px; left:10px; }
+.alert_mess{position: relative; top: 30px; left:10px; width:400px;}
+#sort_field th.sort:hover{ text-decoration: underline; cursor:pointer; }
+.up_sort{ background: url('up.png') no-repeat left; }
+.down_sort{ background: url('down.png') no-repeat left; }
+.selectl{ border: 2px solid #00CC00; }
+
+#admin_label{ position: absolute; top: 8.5px; left:140px; color:white; font-size:18px; }

@@ -10,10 +10,10 @@
     %div{class:"navbar navbar-fixed-top", id:"nav_admin"}
       %div{class:"navbar-inner", id:"orange_h"}
         %div{class:"container"}
-        -if request.fullpath =~ /admin/
+        -if request.fullpath =~ /post/
           %span{class:"s_div"}
-            = render 'admins/search'
-          = link_to "Orange Blog", admins_path, id:"main-label"
+            = render 'posts/search'
+          = link_to "Orange Blog", posts_path, id:"main-label"
           #admin_label
             Admin Panel
             - if admin_auth_signed_in?
