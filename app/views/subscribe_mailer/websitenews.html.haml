@@ -1,0 +1,5 @@
+%table{style:"margin: 0 auto; border:1px solid gray;"}
+  -@article.each do |a|
+    %tr
+      %td= a.article_description.html_safe[0..200]
+      

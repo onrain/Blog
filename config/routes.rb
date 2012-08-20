@@ -13,6 +13,8 @@ OrangeBlog::Application.routes.draw do
 
   
   match "admins/subscribes", to: "admins#subscribes"
+  match "admins/dosending", to: "admins#dosending"
+  
   
   match "admins/edit/comment/:id" => "admins#edit_comment"
   match "admins/update/comment/:id" => "admins#update_comment"

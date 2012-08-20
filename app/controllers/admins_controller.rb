@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class AdminsController < ApplicationController
   
   before_filter :authenticate_admin_auth!
@@ -102,13 +104,20 @@ class AdminsController < ApplicationController
   end
   
   def subscribes
-    @subscribes = Subscribe.all
+    @subscribes = Subscribe.paginate page: params[:page], order: 'id desc', per_page: 10
   end
   
-  def removesubscribes
+  
+  
+  def dosending
+      flash[:notice] = "aeeee"
+      @subscibe = Subscribe.all
+      SubscribeMailer.websitenews(@subscibe).deliver
+      redirect_to admins_subscribes_path, notice:"Рассылка прошла успешно!"
     
   end
   
+    
 private
   def sort_param(s)
     case s
